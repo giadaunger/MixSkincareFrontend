@@ -19,7 +19,7 @@ function Navbar() {
             <svg
               className="w-8 h-8"
               fill="none"
-              stroke="currentColor"
+              stroke="#ffb6c1"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
