@@ -6,7 +6,9 @@ export default {
     ],
     theme: {
       extend: {
-        fontFamily: {},
+        fontFamily: {
+            belleza: ["Belleza", "sans-serif"]
+        },
       },
     },
     plugins: [],
