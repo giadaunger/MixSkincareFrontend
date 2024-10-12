@@ -8,8 +8,8 @@ function Home() {
           Instantly Check Skincare Product Compatibility
         </h1>
         <p className="text-4xl mb-20">Safe, Simple, and Smart!</p>
-        <div className="w-1/2 justify-center flex">
-          <button className="mt-4 bg-[#ffb6c1] border border-[#ffb6c1] p-4 rounded-full justify-center w-1/2 text-xl shadow-xl transition duration-300 hover:scale-125 hover:bg-white hover:text-[#ffb6c1]">
+        <div className="w-2/3 justify-center flex">
+          <button className="mt-4 bg-[#ffb6c1] border border-[#ffb6c1] py-4 rounded-full justify-center w-1/2 text-2xl shadow-xl transition duration-300 hover:scale-125 hover:bg-white hover:text-[#ffb6c1]">
             Start Matching!
           </button>
         </div>
