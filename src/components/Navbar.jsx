@@ -39,19 +39,19 @@ function Navbar() {
         >
           <NavLink
             to="/"
-            className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
           >
             Compare Products
           </NavLink>
           <NavLink
             to="/about"
-            className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
           >
             Contact
           </NavLink>
           <NavLink
             to="/about"
-            className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
           >
             About
           </NavLink>
