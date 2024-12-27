@@ -33,28 +33,30 @@ function Navbar() {
           </button>
         </div>
         <div
-          className={`flex-col md:flex md:flex-row items-center w-full md:w-auto space-x-10 ${
+          className={`flex-col md:flex md:flex-row items-center md:justify-end w-full ${
             isOpen ? "flex" : "hidden"
           }`}
         >
-          <NavLink
-            to="/"
-            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
-          >
-            Compare Products
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
-          >
-            Contact
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
-          >
-            About
-          </NavLink>
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
+            <NavLink
+              to="/"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            >
+              Compare Products
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            >
+              Contact
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            >
+              About
+            </NavLink>
+          </div>
         </div>
       </div>
     </nav>
