@@ -6,8 +6,8 @@ function CompareProducts() {
   const [addProduct, setAddProduct] = useState(false);
 
   return (
-    <div className="h-screen">
-      <div className="z-10 bg-[#ffb6c1] md:w-4/6 mx-auto flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <div>
+      <div className="z-10 w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <AddProducts />
       </div>
       <div className="z-0">
