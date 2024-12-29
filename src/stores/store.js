@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
 const useStore = create((set) => ({
-  closePopUp: false,
-  setClosePopUp: () => set({ closePopUp: true }),
+  isPopupOpen: false,
+  setIsPopupOpen: (value) => set({ isPopupOpen: value }),
 }));
 
 export default useStore;

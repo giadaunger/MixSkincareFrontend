@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
+import useStore from "../stores/store";
 
 function CompareProducts() {
+  const {isPopupOpen, setIsPopupOpen} = useStore();
   const [addProduct, setAddProduct] = useState(false);
 
   return (
@@ -18,17 +20,17 @@ function CompareProducts() {
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
-              <div className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]"/>
-              </div>
+              <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
+              </button>
             </div>
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#ffb6c1]"/>  
             </div>
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
-              <div className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+              <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
                 <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
