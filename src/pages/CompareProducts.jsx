@@ -23,12 +23,12 @@ function CompareProducts() {
       </div>
       <div className="z-0">
         <div className="w-5/6 mx-auto">
-          <div className="w-full mx-auto text-center mt-20">
+          <div className="w-full mx-auto text-center mt-12">
               <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Add Products to Compare Ingredients!</h2>
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
+            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
               {firstProduct ? (
                 <div className="flex flex-col items-center p-4">
                   <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
@@ -44,7 +44,7 @@ function CompareProducts() {
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#ffb6c1]"/>  
             </div>
-            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
+            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
               {secondProduct ? (
                 <div className="flex flex-col items-center p-4">
                   <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
@@ -57,6 +57,14 @@ function CompareProducts() {
                 </button>
               )}
             </div>
+          </div>
+          <div className="flex justify-center">
+            <button 
+            disabled={!firstProduct || !secondProduct}
+            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
+              ${(!firstProduct || !secondProduct) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
+                Analyze compatibility
+            </button>
           </div>
         </div>
       </div>
