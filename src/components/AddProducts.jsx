@@ -4,12 +4,18 @@ import { Close } from "@styled-icons/ionicons-solid/Close";
 import useStore from "../stores/store";
 
 function AddProducts() {
-  const [searchProduct, setSearchProduct] = useState("");
-  const {isPopupOpen, setIsPopupOpen} = useStore();
+  const [searchTerm, setSearchTerm] = useState("");
+  const {isPopupOpen, setIsPopupOpen, searchResults, fetchSearchedProduct, setSelectedProduct} = useStore();
 
   const handleInputChange = (e) => { 
-    const searchTerm = e.target.value;
-    setSearchProduct(searchTerm)
+    const term = e.target.value;
+    setSearchTerm(term);
+    fetchSearchedProduct(term);
+  }
+
+  const handleProductSelect = (product) => {
+    setSelectedProduct(product);
+    setIsPopupOpen(false);
   }
 
   return (
@@ -23,11 +29,24 @@ function AddProducts() {
             <SearchHeart className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input 
               type="text"
-              value={searchProduct}
+              value={searchTerm}
               onChange={handleInputChange}
               placeholder='Type to search'
               className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#ffb6c1]"
             />
+          </div>
+
+          <div className="mt-4 max-h-60 overflow-y-auto">
+            {searchResults.map((product) => (
+              <div 
+                key={product.id}
+                onClick={() => handleProductSelect(product)}
+                className="p-2 hover:bg-[#fca8b5] cursor-pointer rounded-lg mb-2"
+              >
+                <h3 className="font-semibold">{product.product_name}</h3>
+                <p className="text-sm">{product.company_name}</p>
+              </div>
+            ))}
           </div>
       </div>
       )}

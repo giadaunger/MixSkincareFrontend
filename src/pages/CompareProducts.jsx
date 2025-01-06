@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import useStore from "../stores/store";
 
 function CompareProducts() {
-  const {isPopupOpen, setIsPopupOpen} = useStore();
-  const [addProduct, setAddProduct] = useState(false);
+  const {isPopupOpen, setIsPopupOpen, selectedProduct} = useStore();
+  const [firstProduct, setFirstProduct] = useState("");
+  const [secondProduct, setSecondProduct] = useState("");
+
+  useEffect(() => {
+    if (selectedProduct && !firstProduct) {
+      setFirstProduct(selectedProduct);
+    } else if (selectedProduct && !secondProduct) {
+      setSecondProduct(selectedProduct);
+    }
+  }, [selectedProduct]);
 
   return (
     <div>

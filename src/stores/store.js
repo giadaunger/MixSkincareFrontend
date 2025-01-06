@@ -4,22 +4,27 @@ const useStore = create((set) => ({
   isPopupOpen: false,
   setIsPopupOpen: (value) => set({ isPopupOpen: value }),
 
-  chosenProduct: "",
-  fetchProduct: async (chosenProduct) => {
+  selectedProduct: null,
+  setSelectedProduct: (product) => set({ selectedProduct: product }),
+
+  searchResults: [],
+  setSearchResults: (results) => set({ searchResults: results }),
+  fetchSearchedProduct: async (chosenProduct) => {
     try {
-      const respons = await fetch(`http://localhost:8000/product/ingredients/${chosenProduct}`, {
+      const respons = await fetch(`http://localhost:8000/product/${chosenProduct}`, {
         method: "GET",
       });
       if(!respons.ok) {
         console.log("Failed to fetch product");
         throw new Error("Failed to fetch product");
       }
-      const chosenUserProduct = await respons.json();
-      set({ chosenProduct: chosenUserProduct })
+      const data = await respons.json();
+      set({ searchResults: data })
     } catch (error) {
       console.log("Error fetching product: ", error)
     }
-  }
+  },
+
 }));
 
 export default useStore;
