@@ -29,17 +29,33 @@ function CompareProducts() {
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
-              <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
-              </button>
+              {firstProduct ? (
+                <div className="flex flex-col items-center p-4">
+                  <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
+                  <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
+                  <h2 className="text-sm">{firstProduct.company_name}</h2>
+                </div>
+              ) : (
+                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
+                </button>
+              )}
             </div>
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#ffb6c1]"/>  
             </div>
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-96 flex items-center justify-center shadow-xl">
-              <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
-              </button>
+              {secondProduct ? (
+                <div className="flex flex-col items-center p-4">
+                  <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
+                  <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
+                  <h2 className="text-sm">{secondProduct.company_name}</h2>
+                </div>
+              ) : (
+                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
+                </button>
+              )}
             </div>
           </div>
         </div>
