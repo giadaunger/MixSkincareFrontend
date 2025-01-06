@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import useStore from "../stores/store";
+import { Trash3Fill } from "styled-icons/bootstrap";
 
 function CompareProducts() {
   const {isPopupOpen, setIsPopupOpen, selectedProduct} = useStore();
@@ -15,6 +16,14 @@ function CompareProducts() {
       setSecondProduct(selectedProduct);
     }
   }, [selectedProduct]);
+
+  const handleDeleteProduct = (productNumber) => {
+    if(productNumber === 1) {
+      setFirstProduct(null);
+    } else if(productNumber === 2) {
+      setSecondProduct(null);
+    }
+  }
 
   return (
     <div>
@@ -30,10 +39,17 @@ function CompareProducts() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
               {firstProduct ? (
-                <div className="flex flex-col items-center p-4">
-                  <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
-                  <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
-                  <h2 className="text-sm">{firstProduct.company_name}</h2>
+                <div className="relative w-full h-full p-4"> 
+                  <div className="absolute -top-11 right-1"> 
+                    <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
+                      <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
+                    <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
+                    <h2 className="text-sm">{firstProduct.company_name}</h2>
+                  </div>
                 </div>
               ) : (
                 <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
@@ -46,10 +62,17 @@ function CompareProducts() {
             </div>
             <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
               {secondProduct ? (
-                <div className="flex flex-col items-center p-4">
-                  <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
-                  <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
-                  <h2 className="text-sm">{secondProduct.company_name}</h2>
+                <div className="relative w-full h-full p-4"> 
+                  <div className="absolute -top-11 right-1"> 
+                    <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
+                      <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
+                    <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
+                    <h2 className="text-sm">{secondProduct.company_name}</h2>
+                  </div>
                 </div>
               ) : (
                 <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">

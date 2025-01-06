@@ -16,6 +16,7 @@ function AddProducts() {
   const handleProductSelect = (product) => {
     setSelectedProduct(product);
     setIsPopupOpen(false);
+    setSearchTerm("");
   }
 
   return (
