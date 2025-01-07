@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
+import AnalyzedResult from "../components/AnalyzedResult";
 import useStore from "../stores/store";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function CompareProducts() {
-  const {isPopupOpen, setIsPopupOpen, selectedProduct, errorMsg, setErrorMsg} = useStore();
+  const {
+    isPopupOpen, 
+    setIsPopupOpen, 
+    selectedProduct, 
+    errorMsg, setErrorMsg, 
+    isLoading, 
+    setIsLoading,
+    analyzeCompatibility,
+    setAnalysisResult,
+    analysisResult
+  } = useStore();
   const [firstProduct, setFirstProduct] = useState("");
   const [secondProduct, setSecondProduct] = useState("");
 
@@ -32,6 +43,18 @@ function CompareProducts() {
     } else if(productNumber === 2) {
       setSecondProduct(null);
     }
+  }
+
+  const handleAnalyzeCompatibility = () => {
+    if (!firstProduct || !secondProduct) return;
+
+    try {
+      setIsLoading(true);
+      analyzeCompatibility(firstProduct.id, secondProduct.id);
+    } finally {
+      setIsLoading(false);
+    }
+    
   }
 
   return (
@@ -100,12 +123,16 @@ function CompareProducts() {
           }
           <div className="flex justify-center">
             <button 
+            onClick={handleAnalyzeCompatibility}
             disabled={!firstProduct || !secondProduct}
             className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
               ${(!firstProduct || !secondProduct || errorMsg) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
                 Analyze compatibility
             </button>
           </div>
+          {analysisResult &&
+            <AnalyzedResult />
+          }
         </div>
       </div>
     </div>
