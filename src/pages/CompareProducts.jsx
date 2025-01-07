@@ -63,7 +63,7 @@ function CompareProducts() {
 
   return (
     <div>
-      <div className="z-10 w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="z-10 w-11/12 lg:w-3/4 xl:w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <AddProducts />
       </div>
       <div className="z-0">
