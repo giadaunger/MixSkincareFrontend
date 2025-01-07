@@ -2,7 +2,12 @@ import { create } from "zustand";
 
 const useStore = create((set) => ({
   isPopupOpen: false,
-  setIsPopupOpen: (value) => set({ isPopupOpen: value }),
+  setIsPopupOpen: (value) => {
+    set({ isPopupOpen: value });
+    if (!value) { 
+      set({ searchResults: [] }); 
+    }
+  },
 
   selectedProduct: null,
   setSelectedProduct: (product) => set({ selectedProduct: product }),

@@ -3,19 +3,29 @@ import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import useStore from "../stores/store";
 import { Trash3Fill } from "styled-icons/bootstrap";
+import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function CompareProducts() {
   const {isPopupOpen, setIsPopupOpen, selectedProduct} = useStore();
   const [firstProduct, setFirstProduct] = useState("");
   const [secondProduct, setSecondProduct] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    if (selectedProduct && !firstProduct) {
+    if(selectedProduct && !firstProduct) {
       setFirstProduct(selectedProduct);
     } else if (selectedProduct && !secondProduct) {
       setSecondProduct(selectedProduct);
     }
   }, [selectedProduct]);
+
+  useEffect(() => {
+    if(firstProduct && secondProduct && firstProduct.product_name === secondProduct.product_name) {
+      setErrorMsg("OBS! You have selected the same product twice. Please select different products to check compatibility!");
+    } else {
+      setErrorMsg("");
+    }
+  }, [firstProduct, secondProduct]);
 
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
@@ -81,11 +91,19 @@ function CompareProducts() {
               )}
             </div>
           </div>
+          {errorMsg &&
+            <div className="flex justify-center">
+              <div className="flex w-1/3 items-center gap-3 bg-[#fffcc8] text-[#e3ba5f] font-bold rounded-full mt-10 px-6 py-3 max-w-2xl mx-auto">
+                <Warning className="w-8 h-8 flex-shrink-0" />
+                <span className="text-center">{errorMsg}</span>
+              </div>
+            </div>
+          }
           <div className="flex justify-center">
             <button 
             disabled={!firstProduct || !secondProduct}
             className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
-              ${(!firstProduct || !secondProduct) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
+              ${(!firstProduct || !secondProduct || errorMsg) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
                 Analyze compatibility
             </button>
           </div>
