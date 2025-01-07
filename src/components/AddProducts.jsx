@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
 import useStore from "../stores/store";
 
 function AddProducts() {
   const [searchTerm, setSearchTerm] = useState("");
-  const {isPopupOpen, setIsPopupOpen, searchResults, fetchSearchedProduct, setSelectedProduct} = useStore();
+  const {
+    isPopupOpen, 
+    setIsPopupOpen, 
+    searchResults, 
+    fetchSearchedProduct, 
+    setSelectedProduct, 
+    fetchInitialProducts
+  } = useStore();
+
+   useEffect(() => {
+    if (isPopupOpen) {
+      fetchInitialProducts(); 
+    }
+  }, [isPopupOpen]); 
 
   const handleInputChange = (e) => { 
     const term = e.target.value;

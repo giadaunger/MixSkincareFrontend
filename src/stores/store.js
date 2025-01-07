@@ -53,8 +53,23 @@ const useStore = create((set) => ({
       console.log("Error analyzing products: ", error)
       set({ errorMsg: "Failed to analyze products. Please try again." })
     }
-  }
+  },
 
+  fetchInitialProducts: async () => {
+    try {
+      const respons = await fetch("http://localhost:8000/product", {
+        method: "GET",
+      });
+      if(!respons.ok) {
+        console.log("Failed to fetch product");
+        throw new Error("Failed to fetch product");
+      }
+      const data = await respons.json();
+      set({ searchResults: data })
+    } catch (error) {
+      console.log("Error fetching product: ", error)
+    }
+  }
 }));
 
 export default useStore;
