@@ -1,6 +1,9 @@
 import { create } from "zustand";
 
 const useStore = create((set) => ({
+  errorMsg: "",
+  setErrorMsg: (value) => set({ errorMsg: value }),
+
   isPopupOpen: false,
   setIsPopupOpen: (value) => {
     set({ isPopupOpen: value });

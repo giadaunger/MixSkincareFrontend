@@ -6,10 +6,9 @@ import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function CompareProducts() {
-  const {isPopupOpen, setIsPopupOpen, selectedProduct} = useStore();
+  const {isPopupOpen, setIsPopupOpen, selectedProduct, errorMsg, setErrorMsg} = useStore();
   const [firstProduct, setFirstProduct] = useState("");
   const [secondProduct, setSecondProduct] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     if(selectedProduct && !firstProduct) {
