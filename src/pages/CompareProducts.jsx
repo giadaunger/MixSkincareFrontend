@@ -45,16 +45,20 @@ function CompareProducts() {
     }
   }
 
-  const handleAnalyzeCompatibility = () => {
+  const handleAnalyzeCompatibility = async () => {
     if (!firstProduct || !secondProduct) return;
-
+  
     try {
       setIsLoading(true);
-      analyzeCompatibility(firstProduct.id, secondProduct.id);
+      await analyzeCompatibility(firstProduct.id, secondProduct.id);
+      
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
     } finally {
       setIsLoading(false);
     }
-    
   }
 
   return (
@@ -130,6 +134,12 @@ function CompareProducts() {
                 Analyze compatibility
             </button>
           </div>
+          {isLoading &&
+            <div>
+              <img src="../../loaderGIF.gif" alt="" className="mx-auto h-28 w-28" />
+              <p className="text-center text-xl">Loading...</p>
+            </div>
+          }
           {analysisResult &&
             <AnalyzedResult />
           }
