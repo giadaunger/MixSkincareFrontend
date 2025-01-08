@@ -45,10 +45,10 @@ function Navbar() {
               Compare Products
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/dupes"
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
             >
-              Contact
+              Dupes
             </NavLink>
             <NavLink
               to="/about"

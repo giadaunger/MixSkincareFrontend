@@ -6,6 +6,7 @@ import "./index.css";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import CompareProducts from "./pages/CompareProducts";
+import Dupes from "./pages/Dupes";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/compare" element={<CompareProducts />}></Route>
+          <Route path="/dupes" element={<Dupes />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
