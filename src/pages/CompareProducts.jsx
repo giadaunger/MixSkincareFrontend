@@ -8,7 +8,6 @@ import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function CompareProducts() {
   const {
-    isPopupOpen, 
     setIsPopupOpen, 
     selectedProduct, 
     errorMsg, 
@@ -16,7 +15,6 @@ function CompareProducts() {
     isLoading, 
     setIsLoading,
     analyzeCompatibility,
-    setAnalysisResult,
     analysisResult
   } = useStore();
   const [firstProduct, setFirstProduct] = useState("");
