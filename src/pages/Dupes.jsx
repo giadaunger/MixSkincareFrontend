@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
-import AnalyzedResult from "../components/AnalyzedResult";
+import DupesResult from "../components/DupesResult";
 import useStore from "../stores/store";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
@@ -13,7 +13,8 @@ function Dupes() {
     errorMsg, 
     isLoading, 
     setIsLoading,
-    analysisResult
+    fetchDupes,
+    dupesResult
   } = useStore();
   const [chosenProduct, setChosenProduct] = useState("");
 
@@ -34,8 +35,8 @@ function Dupes() {
   
     try {
       setIsLoading(true);
-/*       await analyzeCompatibility(chosenProduct.id, secondProduct.id);
- */      
+      await fetchDupes(chosenProduct.id);
+      
       window.scrollTo({
         top: document.documentElement.scrollHeight,
         behavior: 'smooth'
@@ -57,18 +58,33 @@ function Dupes() {
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Discover budget-friendly alternatives to your favorite skincare products. Compare ingredients, prices, and find similar products that work just as well.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
+            <div className="bg-[#ffb6c1] rounded-xl w-2/3 min-h-52 flex items-center justify-center shadow-xl">
               {chosenProduct ? (
                 <div className="relative w-full h-full p-4"> 
-                  <div className="absolute -top-11 right-1"> 
+                  <div className="absolute right-4"> 
                     <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-row items-center justify-between p-4">
                     <img src={chosenProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
-                    <h2 className="text-lg font-semibold">{chosenProduct.product_name}</h2>
-                    <h2 className="text-sm">{chosenProduct.company_name}</h2>
+                    <div className="flex flex-col items-center">
+                      <h2 className="text-lg font-semibold w-full">{chosenProduct.product_name}</h2>
+                      <h2 className="text-sm w-full">{chosenProduct.company_name}</h2>
+                    </div>
+                    <div>
+                      <p className="">Ingredients</p>
+                      <div>
+                        {chosenProduct?.ingredients?.map((item) => (
+                          <span 
+                            key={item.id}
+                            className="bg-white px-3 py-1 rounded-full text-sm shadow-sm"
+                          >
+                            {item.ingredient.ingredient}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -100,6 +116,9 @@ function Dupes() {
               <img src="../../loaderGIF.gif" alt="" className="mx-auto h-28 w-28" />
               <p className="text-center text-xl">Loading...</p>
             </div>
+          }
+          {dupesResult &&
+            <DupesResult />
           }
         </div>
       </div>
