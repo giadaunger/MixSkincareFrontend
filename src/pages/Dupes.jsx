@@ -9,21 +9,22 @@ import { Warning } from "@styled-icons/ionicons-solid/Warning";
 function Dupes() {
   const {
     setIsPopupOpen, 
-    selectedProduct, 
+    selectedDupeProduct, 
     errorMsg, 
     isLoading, 
     setIsLoading,
     fetchDupes,
     dupesResult,
-    setDupesResult
+    setDupesResult,
+    setSelectedDupeProduct
   } = useStore();
   const [chosenProduct, setChosenProduct] = useState("");
 
   useEffect(() => {
-    if(selectedProduct && !chosenProduct) {
-      setChosenProduct(selectedProduct);
+    if(selectedDupeProduct && !chosenProduct) {
+      setChosenProduct(selectedDupeProduct);
     }
-  }, [selectedProduct]);
+  }, [selectedDupeProduct]);
 
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
@@ -51,7 +52,7 @@ function Dupes() {
   return (
     <div>
       <div className="z-10 w-11/12 lg:w-3/4 xl:w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <AddProducts />
+        <AddProducts onSelect={setSelectedDupeProduct} />
       </div>
       <div className="z-0">
         <div className="w-5/6 mx-auto">
@@ -119,7 +120,7 @@ function Dupes() {
               <p className="text-center text-xl">Loading...</p>
             </div>
           }
-          {dupesResult &&
+          {dupesResult && selectedDupeProduct &&
             <DupesResult />
           }
         </div>

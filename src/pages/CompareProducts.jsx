@@ -9,25 +9,26 @@ import { Warning } from "@styled-icons/ionicons-solid/Warning";
 function CompareProducts() {
   const {
     setIsPopupOpen, 
-    selectedProduct, 
+    selectedCompareProduct, 
     errorMsg, 
     setErrorMsg, 
     isLoading, 
     setIsLoading,
     analyzeCompatibility,
     analysisResult,
-    setAnalysisResult
+    setAnalysisResult,
+    setSelectedCompareProduct
   } = useStore();
   const [firstProduct, setFirstProduct] = useState("");
   const [secondProduct, setSecondProduct] = useState("");
 
   useEffect(() => {
-    if(selectedProduct && !firstProduct) {
-      setFirstProduct(selectedProduct);
-    } else if (selectedProduct && !secondProduct) {
-      setSecondProduct(selectedProduct);
+    if(selectedCompareProduct && !firstProduct) {
+      setFirstProduct(selectedCompareProduct);
+    } else if (selectedCompareProduct && !secondProduct) {
+      setSecondProduct(selectedCompareProduct);
     }
-  }, [selectedProduct]);
+  }, [selectedCompareProduct]);
 
   useEffect(() => {
     if(firstProduct && secondProduct && firstProduct.product_name === secondProduct.product_name) {
@@ -65,7 +66,7 @@ function CompareProducts() {
   return (
     <div>
       <div className="z-10 w-11/12 lg:w-3/4 xl:w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <AddProducts />
+        <AddProducts onSelect={setSelectedCompareProduct} />
       </div>
       <div className="z-0">
         <div className="w-5/6 mx-auto">
@@ -141,7 +142,7 @@ function CompareProducts() {
               <p className="text-center text-xl">Loading...</p>
             </div>
           }
-          {analysisResult &&
+          {analysisResult && firstProduct && secondProduct &&
             <AnalyzedResult />
           }
         </div>

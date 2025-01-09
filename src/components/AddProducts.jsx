@@ -3,14 +3,13 @@ import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
 import useStore from "../stores/store";
 
-function AddProducts() {
+function AddProducts({ onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");
   const {
     isPopupOpen, 
     setIsPopupOpen, 
     searchResults, 
     fetchSearchedProduct, 
-    setSelectedProduct, 
     fetchInitialProducts
   } = useStore();
 
@@ -27,7 +26,7 @@ function AddProducts() {
   }
 
   const handleProductSelect = (product) => {
-    setSelectedProduct(product);
+    onSelect(product);
     setIsPopupOpen(false);
     setSearchTerm("");
   }

@@ -15,8 +15,11 @@ const useStore = create((set) => ({
     }
   },
 
-  selectedProduct: null,
-  setSelectedProduct: (product) => set({ selectedProduct: product }),
+  selectedDupeProduct: null,
+  setSelectedDupeProduct: (product) => set({ selectedDupeProduct: product }),
+  
+  selectedCompareProduct: null,
+  setSelectedCompareProduct: (product) => set({ selectedCompareProduct: product }),
 
   searchResults: [],
   setSearchResults: (results) => set({ searchResults: results }),
@@ -30,7 +33,6 @@ const useStore = create((set) => ({
         throw new Error("Failed to fetch product");
       }
       const data = await respons.json();
-      console.log("Fetched product data:", data);
       set({ searchResults: data })
     } catch (error) {
       console.log("Error fetching product: ", error)
