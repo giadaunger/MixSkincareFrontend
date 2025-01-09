@@ -60,7 +60,7 @@ const useStore = create((set) => ({
   setDupesResult: (result) => set({ dupesResult: result }),
   fetchDupes: async (product) => {
     try {
-      const respons = await fetch(`http://localhost:8000/${product}/similar`, {
+      const respons = await fetch(`http://localhost:8000/product/${product}/similar`, {
         method: "GET"
       });
       if(!respons.ok) {
@@ -70,7 +70,7 @@ const useStore = create((set) => ({
       const data = await respons.json()      
       set({ dupesResult: data })
     } catch (error) {
-      console.log("Error analyzing products: ", error)
+      console.log("Error finding dupes: ", error)
       set({ errorMsg: "Failed find dupes. Please try again." })
     }
   },
