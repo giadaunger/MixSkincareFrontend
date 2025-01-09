@@ -14,7 +14,8 @@ function Dupes() {
     isLoading, 
     setIsLoading,
     fetchDupes,
-    dupesResult
+    dupesResult,
+    setDupesResult
   } = useStore();
   const [chosenProduct, setChosenProduct] = useState("");
 
@@ -27,6 +28,7 @@ function Dupes() {
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
       setChosenProduct(null);
+      setDupesResult([]);
     }
   }
 

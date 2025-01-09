@@ -15,7 +15,8 @@ function CompareProducts() {
     isLoading, 
     setIsLoading,
     analyzeCompatibility,
-    analysisResult
+    analysisResult,
+    setAnalysisResult
   } = useStore();
   const [firstProduct, setFirstProduct] = useState("");
   const [secondProduct, setSecondProduct] = useState("");
@@ -42,6 +43,7 @@ function CompareProducts() {
     } else if(productNumber === 2) {
       setSecondProduct(null);
     }
+    setAnalysisResult(null);
   }
 
   const handleAnalyzeCompatibility = async () => {
