@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import AnalyzedResult from "../components/AnalyzedResult";
+import Loader from "../components/Loader";
 import useStore from "../stores/store";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
@@ -145,10 +146,7 @@ function CompareProducts() {
             </button>
           </div>
           {isLoading &&
-            <div>
-              <img src="../../loaderGIF.gif" alt="" className="mx-auto h-28 w-28" />
-              <p className="text-center text-xl">Loading...</p>
-            </div>
+            <Loader />
           }
           {analysisResult && firstProduct && secondProduct &&
             <AnalyzedResult />

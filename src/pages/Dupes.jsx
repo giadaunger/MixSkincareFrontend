@@ -5,6 +5,7 @@ import DupesResult from "../components/DupesResult";
 import useStore from "../stores/store";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
+import Loader from "../components/Loader";
 
 function Dupes() {
   const {
@@ -115,10 +116,7 @@ function Dupes() {
             </button>
           </div>
           {isLoading &&
-            <div>
-              <img src="../../loaderGIF.gif" alt="" className="mx-auto h-28 w-28" />
-              <p className="text-center text-xl">Loading...</p>
-            </div>
+            <Loader />
           }
           {dupesResult && selectedDupeProduct &&
             <DupesResult />
