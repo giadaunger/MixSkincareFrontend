@@ -3,9 +3,9 @@ import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import DupesResult from "../components/DupesResult";
 import useStore from "../stores/store";
+import Loader from "../components/Loader";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
-import Loader from "../components/Loader";
 
 function Dupes() {
   const {
