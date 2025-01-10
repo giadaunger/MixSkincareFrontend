@@ -60,8 +60,8 @@ function Dupes() {
               <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Find Your Perfect Match!</h2>
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Discover budget-friendly alternatives to your favorite skincare products. Compare ingredients, prices, and find similar products that work just as well.</p>
           </div>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-            <div className="bg-[#ffb6c1] rounded-xl w-2/3 min-h-52 flex items-center justify-center shadow-xl">
+          <div className="flex justify-center items-center">
+            <div className="bg-[#ffb6c1] rounded-xl w-full md:w-2/3 min-h-52 flex items-center justify-center shadow-xl">
               {chosenProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute right-4"> 
@@ -69,15 +69,15 @@ function Dupes() {
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>
-                  <div className="flex flex-row items-center justify-between p-4">
+                  <div className="flex flex-col sm:flex-row items-center justify-between p-4">
                     <img src={chosenProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
                     <div className="flex flex-col items-center">
                       <h2 className="text-lg font-semibold w-full">{chosenProduct.product_name}</h2>
                       <h2 className="text-sm w-full">{chosenProduct.company_name}</h2>
                     </div>
                     <div>
-                      <p className="">Ingredients</p>
-                      <div>
+                      <p className="text-center">Ingredients</p>
+                      <div className="flex flex-wrap justify-center">
                         {chosenProduct?.ingredients?.map((item) => (
                           <span 
                             key={item.id}
@@ -109,7 +109,7 @@ function Dupes() {
             <button 
             onClick={handleAnalyzeCompatibility}
             disabled={!chosenProduct}
-            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
+            className={`w-full sm:w-1/3 lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
               ${(!chosenProduct || errorMsg) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
                 Find dupes!
             </button>
