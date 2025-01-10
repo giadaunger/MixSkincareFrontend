@@ -75,18 +75,22 @@ function CompareProducts() {
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
-              {firstProduct ? (
+          <div className={`bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+            {firstProduct ? (
                 <div className="relative w-full h-full p-4"> 
-                  <div className="absolute -top-11 right-1"> 
+                  <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
-                    <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
-                    <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
-                    <h2 className="text-sm">{firstProduct.company_name}</h2>
+                    <div className="p-4 bg-white rounded-md mb-2">
+                      <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
+                    </div>
+                    <div className="w-full text-center min-h-20">
+                      <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
+                      <h2 className="text-sm ">{firstProduct.company_name}</h2>
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -98,18 +102,22 @@ function CompareProducts() {
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#ffb6c1]"/>  
             </div>
-            <div className="bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-80 flex items-center justify-center shadow-xl">
+            <div className={`bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
               {secondProduct ? (
                 <div className="relative w-full h-full p-4"> 
-                  <div className="absolute -top-11 right-1"> 
+                  <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
-                    <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
-                    <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
-                    <h2 className="text-sm">{secondProduct.company_name}</h2>
+                    <div className="p-4 bg-white rounded-md mb-2">
+                      <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
+                    </div>
+                    <div className="w-full text-center min-h-20">
+                      <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
+                      <h2 className="text-sm ">{secondProduct.company_name}</h2>
+                    </div>
                   </div>
                 </div>
               ) : (

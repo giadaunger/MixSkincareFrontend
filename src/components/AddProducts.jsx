@@ -54,10 +54,13 @@ function AddProducts({ onSelect }) {
               <div 
                 key={product.id}
                 onClick={() => handleProductSelect(product)}
-                className="p-2 hover:bg-[#fca8b5] cursor-pointer rounded-lg mb-2"
+                className="p-2 hover:bg-[#fca8b5] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto"
               >
-                <h3 className="font-semibold">{product.product_name}</h3>
-                <p className="text-sm">{product.company_name}</p>
+                <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10" />
+                <div>
+                  <h3 className="font-semibold">{product.product_name}</h3>
+                  <p className="text-sm">{product.company_name}</p>
+                </div>
               </div>
             ))}
           </div>

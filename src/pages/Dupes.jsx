@@ -70,7 +70,7 @@ function Dupes() {
                     </div>
                   </div>
                   <div className="flex flex-row items-center justify-between p-4">
-                    <img src={chosenProduct.product_img} alt="product img" className="w-32 h-32 object-cover rounded-lg mb-4" />
+                    <img src={chosenProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
                     <div className="flex flex-col items-center">
                       <h2 className="text-lg font-semibold w-full">{chosenProduct.product_name}</h2>
                       <h2 className="text-sm w-full">{chosenProduct.company_name}</h2>
