@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import useStore from '../stores/store'
+import GoBackBtn from '../components/GoBackBtn';
 
 function ProductPage() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ function ProductPage() {
 
   return (
     <div>
+      <GoBackBtn />
       <img src={productInfo.product_img} alt="" />
       <div>
         <h2>{productInfo.product_name}</h2>
