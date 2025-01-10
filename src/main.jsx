@@ -7,6 +7,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import CompareProducts from "./pages/CompareProducts";
 import Dupes from "./pages/Dupes";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/compare" element={<CompareProducts />}></Route>
           <Route path="/dupes" element={<Dupes />}></Route>
+          <Route path="/product/:id" element={<ProductPage />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
