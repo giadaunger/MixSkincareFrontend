@@ -91,6 +91,24 @@ const useStore = create((set) => ({
     } catch (error) {
       console.log("Error fetching product: ", error)
     }
+  },
+
+  productInfo: null,
+  setProductInfo: (result) => set({ productInfo: result}),
+  fetchProductInfo: async (id) => {
+    try {
+      const respons = await fetch(`http://localhost:8000/product/id/${id}`, {
+        method: "GET",
+      });
+      if(!respons.ok) {
+        console.log("Failed to fetch product");
+        throw new Error("Failed to fetch product");
+      }
+      const data = await respons.json();
+      set({ productInfo: data })
+    } catch (error) {
+      console.log("Error fetching product: ", error)
+    }
   }
 }));
 
