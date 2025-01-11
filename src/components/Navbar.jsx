@@ -6,16 +6,16 @@ function Navbar() {
 
   return (
     <nav className="p-4 shadow-md">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div className="flex justify-between w-full md:w-auto">
+      <div className="container mx-auto flex flex-col min-[1110px]:flex-row items-center justify-between">
+        <div className="flex justify-between w-full min-[1110px]:w-auto">
           <NavLink to="/">
             <img
               src="/logo.png"
               alt="Logo"
-              className="md:h-28 md:w-28 h-20 w-20"
+              className="min-[1110px]:h-28 min-[1110px]:w-28 h-20 w-20"
             />
           </NavLink>
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="min-[1110px]:hidden">
             <svg
               className="w-8 h-8"
               fill="none"
@@ -33,11 +33,11 @@ function Navbar() {
           </button>
         </div>
         <div
-          className={`flex-col md:flex md:flex-row items-center md:justify-end w-full ${
+          className={`flex-col min-[1110px]:flex min-[1110px]:flex-row items-center min-[1110px]:justify-end w-full ${
             isOpen ? "flex" : "hidden"
           }`}
         >
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10">
+          <div className="flex flex-col min-[1110px]:flex-row space-y-4 min-[1110px]:space-y-0 min-[1110px]:space-x-10">
             <NavLink
               to="/compare"
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
@@ -49,6 +49,12 @@ function Navbar() {
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
             >
               Dupes
+            </NavLink>
+            <NavLink
+              to="/compare"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+            >
+              Skincare Routine
             </NavLink>
             <NavLink
               to="/about"
