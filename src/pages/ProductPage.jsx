@@ -18,9 +18,11 @@ function ProductPage() {
   return (
     <div className="">
       <GoBackBtn />
-      <div className="w-5/6 md:w-2/3 mx-auto flex flex-col min-[1000px]:flex-row justify-center gap-20">
-        <img src={productInfo.product_img} alt="" className="h-96 w-72 lg:h-auto lg:w-auto mx-auto" />
-        <div className="">
+      <div className="w-5/6 md:w-2/3 mx-auto flex flex-col min-[1000px]:flex-row justify-center gap-10">
+      <div className="w-full min-[1000px]:w-1/3">
+        <img src={productInfo.product_img} alt="" className="mx-auto" />
+      </div>
+        <div className="w-full min-[1000px]:w-2/3">
           <div className="mb-32 text-center min-[1000px]:text-left">
             <h2 className="text-4xl">{productInfo.product_name}</h2>
             <p className="text-xl">{productInfo.company_name}</p>
