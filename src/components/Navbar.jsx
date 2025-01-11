@@ -51,7 +51,7 @@ function Navbar() {
               Dupes
             </NavLink>
             <NavLink
-              to="/compare"
+              to="/skincare-routine"
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
             >
               Skincare Routine
