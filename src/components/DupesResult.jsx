@@ -11,7 +11,7 @@ function DupesResult() {
     <div className="relative w-full h-full p-4"> 
       {dupesResult.similar_products?.map((product) => (  
         <Link to={`/product/${product.id}`}>
-          <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between p-4 w-full md:w-2/3 mx-auto bg-[#ffb6c1] rounded-xl mb-10 transform transition duration-300 hover:scale-90">
+          <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between p-4 w-full md:w-2/3 mx-auto bg-[#ffb6c1] rounded-xl mb-10 transform transition duration-300 hover:scale-105">
             <div className="flex flex-col items-center">
               <img src={product.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
               <h2 className="text-lg font-semibold w-full">{product.name}</h2>

@@ -92,7 +92,7 @@ function Dupes() {
                   </div>
                 </div>
               ) : (
-                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-105">
                   <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
                 </button>
               )}

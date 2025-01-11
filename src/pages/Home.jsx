@@ -13,7 +13,7 @@ function Home() {
             Safe, Simple, and Smart!
           </p>
           <div className="w-full sm:w-2/3 lg:justify-center flex">
-            <Link to="/compare" className="mt-4 bg-[#ffdce1] lg:bg-[#ffb6c1] border border-[#ffdce1] lg:border-[#ffb6c1] py-4 rounded-full w-1/2 text-xl text-center sm:text-2xl shadow-xl transition duration-300 hover:scale-125 hover:bg-white hover:text-[#ffb6c1]">
+            <Link to="/compare" className="mt-4 bg-[#ffdce1] lg:bg-[#ffb6c1] border border-[#ffdce1] lg:border-[#ffb6c1] py-4 rounded-full w-1/2 text-xl text-center sm:text-2xl shadow-xl transition duration-300 hover:scale-105 hover:bg-white hover:text-[#ffb6c1]">
               Start Matching!
             </Link>
           </div>

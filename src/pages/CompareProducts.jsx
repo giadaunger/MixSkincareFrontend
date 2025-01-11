@@ -80,7 +80,7 @@ function CompareProducts() {
             {firstProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
-                    <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
+                    <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>
@@ -107,7 +107,7 @@ function CompareProducts() {
               {secondProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
-                    <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer hover:bg-gray-100">
+                    <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
                       <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
                     </div>
                   </div>

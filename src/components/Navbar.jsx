@@ -40,25 +40,25 @@ function Navbar() {
           <div className="flex flex-col min-[1110px]:flex-row space-y-4 min-[1110px]:space-y-0 min-[1110px]:space-x-10">
             <NavLink
               to="/compare"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
             >
               Compare Products
             </NavLink>
             <NavLink
               to="/dupes"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
             >
               Dupes
             </NavLink>
             <NavLink
               to="/compare"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
             >
               Skincare Routine
             </NavLink>
             <NavLink
               to="/about"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-125 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
             >
               About
             </NavLink>
