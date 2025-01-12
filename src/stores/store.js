@@ -21,6 +21,12 @@ const useStore = create((set) => ({
   selectedCompareProduct: null,
   setSelectedCompareProduct: (product) => set({ selectedCompareProduct: product }),
 
+  firstCompareProduct: null,
+  setFirstCompareProduct: (product) => set({ firstCompareProduct: product }),
+  
+  secondCompareProduct: null,
+  setSecondCompareProduct: (product) => set({ secondCompareProduct: product }),
+
   searchResults: [],
   setSearchResults: (results) => set({ searchResults: results }),
   fetchSearchedProduct: async (chosenProduct) => {

@@ -18,42 +18,44 @@ function CompareProducts() {
     analyzeCompatibility,
     analysisResult,
     setAnalysisResult,
-    setSelectedCompareProduct
+    setSelectedCompareProduct,
+    firstCompareProduct,
+    setFirstCompareProduct,
+    secondCompareProduct,
+    setSecondCompareProduct
   } = useStore();
-  const [firstProduct, setFirstProduct] = useState("");
-  const [secondProduct, setSecondProduct] = useState("");
 
   useEffect(() => {
-    if(selectedCompareProduct && !firstProduct) {
-      setFirstProduct(selectedCompareProduct);
-    } else if (selectedCompareProduct && !secondProduct) {
-      setSecondProduct(selectedCompareProduct);
+    if(selectedCompareProduct && !firstCompareProduct) {
+      setFirstCompareProduct(selectedCompareProduct);
+    } else if (selectedCompareProduct && !secondCompareProduct) {
+      setSecondCompareProduct(selectedCompareProduct);
     }
   }, [selectedCompareProduct]);
 
   useEffect(() => {
-    if(firstProduct && secondProduct && firstProduct.product_name === secondProduct.product_name) {
+    if(firstCompareProduct && secondCompareProduct && firstCompareProduct.product_name === secondCompareProduct.product_name) {
       setErrorMsg("OBS! You have selected the same product twice. Please select different products to check compatibility!");
     } else {
       setErrorMsg("");
     }
-  }, [firstProduct, secondProduct]);
+  }, [firstCompareProduct, secondCompareProduct]);
 
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
-      setFirstProduct(null);
+      setFirstCompareProduct(null);
     } else if(productNumber === 2) {
-      setSecondProduct(null);
+      setSecondCompareProduct(null);
     }
     setAnalysisResult(null);
   }
 
   const handleAnalyzeCompatibility = async () => {
-    if (!firstProduct || !secondProduct) return;
+    if (!firstCompareProduct || !secondCompareProduct) return;
   
     try {
       setIsLoading(true);
-      await analyzeCompatibility(firstProduct.id, secondProduct.id);
+      await analyzeCompatibility(firstCompareProduct.id, secondCompareProduct.id);
       
       window.scrollTo({
         top: document.documentElement.scrollHeight,
@@ -76,8 +78,8 @@ function CompareProducts() {
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-          <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
-            {firstProduct ? (
+          <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+            {firstCompareProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
@@ -86,11 +88,11 @@ function CompareProducts() {
                   </div>
                   <div className="flex flex-col items-center">
                     <div className="p-4 bg-white rounded-md mb-2">
-                      <img src={firstProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
+                      <img src={firstCompareProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
                     </div>
                     <div className="w-full text-center min-h-20">
-                      <h2 className="text-lg font-semibold">{firstProduct.product_name}</h2>
-                      <h2 className="text-sm ">{firstProduct.company_name}</h2>
+                      <h2 className="text-lg font-semibold">{firstCompareProduct.product_name}</h2>
+                      <h2 className="text-sm ">{firstCompareProduct.company_name}</h2>
                     </div>
                   </div>
                 </div>
@@ -103,8 +105,8 @@ function CompareProducts() {
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#E2A3B7]"/>  
             </div>
-            <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
-              {secondProduct ? (
+            <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+              {secondCompareProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
@@ -113,11 +115,11 @@ function CompareProducts() {
                   </div>
                   <div className="flex flex-col items-center">
                     <div className="p-4 bg-white rounded-md mb-2">
-                      <img src={secondProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
+                      <img src={secondCompareProduct.product_img} alt="product img" className="w-32 h-32 object-scale-down rounded-lg mb-4" />
                     </div>
                     <div className="w-full text-center min-h-20">
-                      <h2 className="text-lg font-semibold">{secondProduct.product_name}</h2>
-                      <h2 className="text-sm ">{secondProduct.company_name}</h2>
+                      <h2 className="text-lg font-semibold">{secondCompareProduct.product_name}</h2>
+                      <h2 className="text-sm ">{secondCompareProduct.company_name}</h2>
                     </div>
                   </div>
                 </div>
@@ -139,16 +141,16 @@ function CompareProducts() {
           <div className="flex justify-center">
             <button 
             onClick={handleAnalyzeCompatibility}
-            disabled={!firstProduct || !secondProduct}
+            disabled={!firstCompareProduct || !secondCompareProduct}
             className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 border text-black
-              ${(!firstProduct || !secondProduct || errorMsg) ? 'bg-gray-300 border-gray-300 cursor-not-allowed opacity-50' : 'border-[#FFDFE9] bg-[#FFDFE9] hover:bg-white active:bg-[#E2A3B7] hover:text-[#E2A3B7] hover:border-[#E2A3B7] transform transition duration-300 hover:scale-110'}`}>
+              ${(!firstCompareProduct || !secondCompareProduct || errorMsg) ? 'bg-gray-300 border-gray-300 cursor-not-allowed opacity-50' : 'border-[#FFDFE9] bg-[#FFDFE9] hover:bg-white active:bg-[#E2A3B7] hover:text-[#E2A3B7] hover:border-[#E2A3B7] transform transition duration-300 hover:scale-110'}`}>
                 Analyze compatibility
             </button>
           </div>
           {isLoading &&
             <Loader />
           }
-          {analysisResult && firstProduct && secondProduct &&
+          {analysisResult && firstCompareProduct && secondCompareProduct &&
             <AnalyzedResult />
           }
         </div>
