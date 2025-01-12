@@ -9,7 +9,6 @@ import ExperienceLevel from '../components/skincareRoutineForm/ExperienceLevel'
 
 function SkincareRoutine() {
   const [currentSlideStep, setCurrentSlideStep] = useState(0);
-  const [age, setAge] = useState(25);
 
   const slides = [
     {
@@ -25,7 +24,7 @@ function SkincareRoutine() {
       title: "What are your skin concerns?",
     },
     {
-      component: <Age age={age} setAge={setAge} />,
+      component: <Age />,
       title: "What's your age?",
     },
     {
