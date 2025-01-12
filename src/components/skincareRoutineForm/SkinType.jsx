@@ -1,5 +1,5 @@
 import React from 'react'
-import useFormStore from '../../stores/formStore'  // Justera sökvägen
+import useFormStore from '../../stores/formStore'
 
 function SkinType() {
   const { formData, updateFormField } = useFormStore();
