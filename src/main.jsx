@@ -9,6 +9,7 @@ import CompareProducts from "./pages/CompareProducts";
 import Dupes from "./pages/Dupes";
 import ProductPage from "./pages/ProductPage";
 import SkincareRoutine from "./pages/SkincareRoutine";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dupes" element={<Dupes />}></Route>
           <Route path="/product/:id" element={<ProductPage />}></Route>
           <Route path="/skincare-routine" element={<SkincareRoutine />}></Route>
+          <Route path="/about" element={<About />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
