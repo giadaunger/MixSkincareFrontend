@@ -34,7 +34,7 @@ function AddProducts({ onSelect }) {
   return (
     <>
       {isPopupOpen && (
-        <div className="p-4 w-full flex flex-col bg-[#FFD6DC] border-8 rounded-xl border-[#fca8b5] min-h-96 shadow-2xl">
+        <div className="p-4 w-full flex flex-col bg-[#FFDFE9] border-8 rounded-xl border-[#E2A3B7] min-h-96 shadow-2xl">
           <button className="flex justify-end" onClick={() => setIsPopupOpen(false)}>
             <Close className="w-10 h-10 cursor-pointer" />
           </button>
@@ -45,7 +45,7 @@ function AddProducts({ onSelect }) {
               value={searchTerm}
               onChange={handleInputChange}
               placeholder='Type to search'
-              className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#ffb6c1]"
+              className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#FFDFE9]"
             />
           </div>
 
@@ -54,7 +54,7 @@ function AddProducts({ onSelect }) {
               <div 
                 key={product.id}
                 onClick={() => handleProductSelect(product)}
-                className="p-2 hover:bg-[#fca8b5] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto"
+                className="p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto"
               >
                 <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10" />
                 <div>

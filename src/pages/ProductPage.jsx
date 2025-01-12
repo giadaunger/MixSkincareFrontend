@@ -6,7 +6,7 @@ import Loader from '../components/Loader'
 
 function ProductPage() {
   const { id } = useParams();
-  const { productInfo, setProductInfo, fetchProductInfo } = useStore();
+  const { productInfo, fetchProductInfo } = useStore();
   const [activeTab, setActiveTab] = useState('description');
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function ProductPage() {
                 onClick={() => setActiveTab('description')}
                 className={`p-4 text-md font-medium rounded-t-md ${
                   activeTab === 'description'
-                    ? 'text-[#ffb6c1] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
+                    ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
                 }`}
               >
@@ -45,7 +45,7 @@ function ProductPage() {
                 onClick={() => setActiveTab('ingredients')}
                 className={`p-4 text-md font-medium rounded-t-md ${
                   activeTab === 'ingredients'
-                    ? 'text-[#ffb6c1] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
+                    ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
                 }`}
               >
@@ -56,7 +56,7 @@ function ProductPage() {
                 onClick={() => setActiveTab('SkinType')}
                 className={`p-4 text-md font-medium rounded-t-md ${
                   activeTab === 'SkinType'
-                    ? 'text-[#ffb6c1] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
+                    ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
                 }`}
               >
@@ -86,21 +86,21 @@ function ProductPage() {
         </div>
       </div>
       <div className="w-5/6 md:w-2/3 mx-auto mt-40 space-y-10 mb-20">
-        <div className="bg-[#ffb6c1] w-full rounded-md flex flex-row p-4 justify-between items-center">
+        <div className="bg-[#FFDFE9] w-full rounded-md flex flex-row p-4 justify-between items-center">
           <div>Logo</div>
           <div className="flex flex-row space-x-5 items-center">
             <p>95kr</p>
             <button className="bg-white text-black p-2 items-center">Go to store</button>
           </div>
         </div>
-        <div className="bg-[#ffb6c1] w-full rounded-md flex flex-row p-4 justify-between items-center">
+        <div className="bg-[#FFDFE9] w-full rounded-md flex flex-row p-4 justify-between items-center">
           <div>Logo</div>
           <div className="flex flex-row space-x-5 items-center">
             <p>95kr</p>
             <button className="bg-white text-black p-2 items-center">Go to store</button>
           </div>
         </div>
-        <div className="bg-[#ffb6c1] w-full rounded-md flex flex-row p-4 justify-between items-center">
+        <div className="bg-[#FFDFE9] w-full rounded-md flex flex-row p-4 justify-between items-center">
           <div>Logo</div>
           <div className="flex flex-row space-x-5 items-center">
             <p>95kr</p>

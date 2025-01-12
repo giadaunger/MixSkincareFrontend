@@ -12,7 +12,7 @@ function AnalyzedResult() {
   return (
     <>
       {(hasActiveIngredients || hasIncompatibilities) ? (
-        <div className="bg-[#ffb6c1] rounded-xl p-6 lg:w-2/3 mx-auto mb-24">
+        <div className="bg-[#FFDFE9] rounded-xl p-6 lg:w-2/3 mx-auto mb-24">
           <div className="md:flex inline">
             <div className="bg-white rounded-xl p-6 md:w-3/4">
               {analysisResult.active_ingredients?.map((active, index) => (

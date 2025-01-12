@@ -19,7 +19,7 @@ function Navbar() {
             <svg
               className="w-8 h-8"
               fill="none"
-              stroke="#ffb6c1"
+              stroke="#E2A3B7"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -40,25 +40,25 @@ function Navbar() {
           <div className="flex flex-col min-[1110px]:flex-row space-y-4 min-[1110px]:space-y-0 min-[1110px]:space-x-10">
             <NavLink
               to="/compare"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
             >
               Compare Products
             </NavLink>
             <NavLink
               to="/dupes"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
             >
               Dupes
             </NavLink>
             <NavLink
               to="/skincare-routine"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
             >
               Skincare Routine
             </NavLink>
             <NavLink
               to="/about"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#ffb6c1]"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
             >
               About
             </NavLink>

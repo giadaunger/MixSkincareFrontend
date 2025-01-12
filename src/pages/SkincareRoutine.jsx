@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function SkincareRoutine() {
-  const [age, setAge] = useState(25); // Default värde på 25
+  const [age, setAge] = useState(25);
 
  return (
    <div className="w-5/6 mx-auto">

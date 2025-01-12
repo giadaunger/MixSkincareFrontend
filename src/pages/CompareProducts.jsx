@@ -76,12 +76,12 @@ function CompareProducts() {
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-          <div className={`bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+          <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
             {firstProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(1)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
-                      <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
+                      <Trash3Fill className="w-6 h-6 text-[#E2A3B7]" />
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
@@ -96,19 +96,19 @@ function CompareProducts() {
                 </div>
               ) : (
                 <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
                 </button>
               )}
             </div>
             <div className="flex justify-center items-center">
-              <Plus className="w-24 h-24 text-[#ffb6c1]"/>  
+              <Plus className="w-24 h-24 text-[#E2A3B7]"/>  
             </div>
-            <div className={`bg-[#ffb6c1] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+            <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
               {secondProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
                     <div onClick={() => handleDeleteProduct(2)} className="bg-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transform transition duration-300 hover:scale-125">
-                      <Trash3Fill className="w-6 h-6 text-[#ffb6c1]" />
+                      <Trash3Fill className="w-6 h-6 text-[#E2A3B7]" />
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
@@ -123,7 +123,7 @@ function CompareProducts() {
                 </div>
               ) : (
                 <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#ffb6c1]" />
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
                 </button>
               )}
             </div>
@@ -140,8 +140,8 @@ function CompareProducts() {
             <button 
             onClick={handleAnalyzeCompatibility}
             disabled={!firstProduct || !secondProduct}
-            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 transition-colors duration-200
-              ${(!firstProduct || !secondProduct || errorMsg) ? 'bg-gray-300 cursor-not-allowed opacity-50' : 'bg-[#ffb6c1] hover:bg-[#ff9eab] active:bg-[#ff8c9c]'}`}>
+            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 border text-black
+              ${(!firstProduct || !secondProduct || errorMsg) ? 'bg-gray-300 border-gray-300 cursor-not-allowed opacity-50' : 'border-[#FFDFE9] bg-[#FFDFE9] hover:bg-white active:bg-[#E2A3B7] hover:text-[#E2A3B7] hover:border-[#E2A3B7] transform transition duration-300 hover:scale-110'}`}>
                 Analyze compatibility
             </button>
           </div>
