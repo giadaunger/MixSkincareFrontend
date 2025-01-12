@@ -49,7 +49,12 @@ function DupesResult() {
                   strokeLinecap: 'round',
                   textSize: '16px',
                   pathTransitionDuration: 1.5,
-                  pathColor: `#10B981`,  
+                  pathColor: 
+                    Math.round((product.matching_ingredients.length / product.total_ingredients) * 100) < 40 
+                    ? '#ff8376'
+                    : Math.round((product.matching_ingredients.length / product.total_ingredients) * 100) < 70 
+                    ? '#ffbd5d'
+                    : '#90EE90',  
                   textColor: '#374151', 
                   trailColor: 'white',
                   backgroundColor: '#3e98c7',
