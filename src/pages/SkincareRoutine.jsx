@@ -55,7 +55,7 @@ function SkincareRoutine() {
         <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Build Your Daily Skincare Routine!</h2>
         <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Get a basic routine suggestion based on your skin type and concerns. Simple guidance for your everyday skincare needs.</p>
       </div>
-      <div className="bg-[#FFDFE9] rounded-md p-8 w-5/6 mx-auto">
+      <div className="bg-[#FFDFE9] rounded-xl p-8 w-5/6 mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-semibold mb-4">{slides[currentSlideStep].title}</h2>
           <p className="text-gray-600">Step {currentSlideStep + 1} of {slides.length}</p>
@@ -71,24 +71,29 @@ function SkincareRoutine() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
-          <button 
-            onClick={handlePrevious}
-            className={`p-2 ${currentSlideStep === 0 ? 'invisible' : ''}`}
-          >
-            <ChevronLeft size={24} />
-          </button>
+        <div className="grid grid-rows-[1fr_auto] sm:grid-rows-1 grid-cols-2 sm:grid-cols-[auto_1fr_auto] gap-4 items-center">
+  <button 
+    onClick={handlePrevious}
+    className={`p-2 col-start-1 row-start-2 sm:row-start-1 ${currentSlideStep === 0 ? 'invisible' : ''}`}
+  >
+    <ChevronLeft size={24} />
+  </button>
 
-          <div className="flex justify-center">
-            {slides[currentSlideStep].component}
-          </div>
+  <div className="flex justify-center col-span-2 row-start-1 sm:col-span-1 sm:col-start-2">
+    {slides[currentSlideStep].component}
+  </div>
 
-          <button 
-            onClick={handleNext}
-            className={`p-2 ${currentSlideStep === slides.length - 1 ? 'invisible' : ''}`}
-          >
-            <ChevronRight size={24} />
-          </button>
+  <button 
+    onClick={handleNext}
+    className={`p-2 col-start-2 row-start-2 justify-self-end sm:justify-self-start sm:row-start-1 sm:col-start-3 ${
+      currentSlideStep === slides.length - 1 ? 'invisible' : ''
+    }`}
+  >
+    <ChevronRight size={24} />
+  </button>
+</div>
+        <div className="justify-center w-full flex mt-10">
+          <button className={`p-2 rounded-xl border border-[#E2A3B7] bg-[#E2A3B7] text-white font-semibold text-xl ${currentSlideStep < slides.length - 1 ? 'invisible' : ''}`}>Create Routine!</button>
         </div>
       </div>
     </div>
