@@ -11,6 +11,11 @@ function ProductPage() {
 
   useEffect(() => {
     fetchProductInfo(id);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, [id]);
 
   if (!productInfo) return <div><Loader /></div>;
