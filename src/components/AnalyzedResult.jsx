@@ -9,6 +9,31 @@ function AnalyzedResult() {
   const hasActiveIngredients = analysisResult.active_ingredients?.length > 0;
   const hasIncompatibilities = analysisResult.incompatibility_warnings?.length > 0;
   
+  const renderWarningImage = () => {
+    if (hasActiveIngredients && hasIncompatibilities) {
+      return (
+        <div className="w-40 h-40 mx-auto">
+          <img src="../../comboWarning.png" alt="" />
+        </div>
+      );
+    }
+    if (hasActiveIngredients) {
+      return (
+        <div className="w-40 h-40">
+          <img src="../../yellowWarning.png" alt="" />
+        </div>
+      );
+    }
+    if (hasIncompatibilities) {
+      return (
+        <div className="w-40 h-40">
+          <img src="../../blueWarning.png" alt="" />
+        </div>
+      );
+    }
+    return null;
+  };
+  
   return (
     <>
       {(hasActiveIngredients || hasIncompatibilities) ? (
@@ -41,22 +66,8 @@ function AnalyzedResult() {
                 </div>
               ))}
             </div>
-            <div className="flex flex-1 items-center">
-              {analysisResult.active_ingredients && !analysisResult.incompatibility_warnings &&
-                <div className="w-40 h-40">
-                  <img src="../../yellowWarning.png" alt="" />
-                </div>
-              }
-              {!analysisResult.active_ingredients && analysisResult.incompatibility_warnings &&
-                <div className="w-40 h-40">
-                  <img src="../../blueWarning.png" alt="" />
-                </div>
-              }
-              {analysisResult.active_ingredients && analysisResult.incompatibility_warnings &&
-                <div className="w-40 h-40 mx-auto">
-                  <img src="../../comboWarning.png" alt="" />
-                </div>
-              }
+            <div className="flex flex-1 items-center justify-center">
+              {renderWarningImage()}
             </div>
           </div>
         </div>
