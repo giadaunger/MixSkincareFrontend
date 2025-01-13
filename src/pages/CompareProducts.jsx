@@ -8,6 +8,7 @@ import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function CompareProducts() {
+  const [activeCard, setActiveCard] = useState(null);
   const {
     setIsPopupOpen, 
     selectedCompareProduct, 
@@ -26,10 +27,12 @@ function CompareProducts() {
   } = useStore();
 
   useEffect(() => {
-    if(selectedCompareProduct && !firstCompareProduct) {
+    if(selectedCompareProduct && activeCard === 1) {
       setFirstCompareProduct(selectedCompareProduct);
-    } else if (selectedCompareProduct && !secondCompareProduct) {
+      setActiveCard(null); 
+    } else if (selectedCompareProduct && activeCard === 2) {
       setSecondCompareProduct(selectedCompareProduct);
+      setActiveCard(null); 
     }
   }, [selectedCompareProduct]);
 
@@ -40,6 +43,11 @@ function CompareProducts() {
       setErrorMsg("");
     }
   }, [firstCompareProduct, secondCompareProduct]);
+
+  const handleCardClick = (cardNumber) => {
+    setActiveCard(cardNumber);
+    setIsPopupOpen(true);
+  };
 
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
@@ -97,7 +105,7 @@ function CompareProducts() {
                   </div>
                 </div>
               ) : (
-                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                <button onClick={() => handleCardClick(1)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
                   <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
                 </button>
               )}
@@ -124,7 +132,7 @@ function CompareProducts() {
                   </div>
                 </div>
               ) : (
-                <button onClick={() => setIsPopupOpen(true)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
+                <button onClick={() => handleCardClick(2)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
                   <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
                 </button>
               )}
