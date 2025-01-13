@@ -73,6 +73,7 @@ function AddProducts({ onSelect }) {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               placeholder='Type to search'
+              autoFocus
               className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#FFDFE9]"
             />
           </div>
