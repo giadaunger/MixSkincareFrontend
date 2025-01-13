@@ -37,7 +37,7 @@ function ProductPage() {
             <div className="w-full flex justify-start mb-5 border-b border-black">
               <button
                 onClick={() => setActiveTab('description')}
-                className={`p-4 text-md font-medium rounded-t-md ${
+                className={`p-2 sm:p-4 text-sm sm:text-lg font-medium rounded-t-md ${
                   activeTab === 'description'
                     ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
@@ -48,7 +48,7 @@ function ProductPage() {
 
               <button
                 onClick={() => setActiveTab('ingredients')}
-                className={`p-4 text-md font-medium rounded-t-md ${
+                className={`p-2 sm:p-4 text-sm sm:text-lg font-medium rounded-t-md ${
                   activeTab === 'ingredients'
                     ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
@@ -59,7 +59,7 @@ function ProductPage() {
 
               <button
                 onClick={() => setActiveTab('SkinType')}
-                className={`p-4 text-md font-medium rounded-t-md ${
+                className={`p-2 sm:p-4 text-sm sm:text-lg font-medium rounded-t-md ${
                   activeTab === 'SkinType'
                     ? 'text-[#E2A3B7] font-extrabold border-x border-t border-black relative -mb-[1px] bg-white'
                     : 'text-black transform transition duration-300 hover:scale-105'
