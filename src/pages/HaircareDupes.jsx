@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
-function Dupes() {
+function HaircareDupes() {
   const {
     setIsPopupOpen, 
     selectedDupeProduct, 
@@ -58,7 +58,7 @@ function Dupes() {
       <div className="z-0">
         <div className="w-5/6 mx-auto">
           <div className="w-full md:w-2/3 mx-auto text-center mt-12">
-              <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Find Your Perfect Match!</h2>
+              <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Find Your Perfect Match! Hair</h2>
               <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Discover budget-friendly alternatives to your favorite skincare products. Compare ingredients, prices, and find similar products that work just as well.</p>
           </div>
           <div className="flex justify-center items-center">
@@ -129,4 +129,4 @@ function Dupes() {
   );
 }
 
-export default Dupes;
+export default HaircareDupes;

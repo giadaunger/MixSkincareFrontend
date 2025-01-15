@@ -52,13 +52,13 @@ function Navbar() {
               </div>
               <div className="hidden group-hover:block absolute left-0 min-[1110px]:mt-0 z-50 bg-white shadow-lg rounded-b-lg">
                 <NavLink
-                  to="/dupes"
+                  to="/skincare-dupes"
                   className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Skincare Dupes
                 </NavLink>
                 <NavLink
-                  to="/dupes"
+                  to="/haircare-dupes"
                   className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Haircare Dupes
