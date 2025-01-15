@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { CaretDown } from "styled-icons/bootstrap";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,18 +45,46 @@ function Navbar() {
             >
               Compare Products
             </NavLink>
-            <NavLink
-              to="/dupes"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
-            >
-              Dupes
-            </NavLink>
-            <NavLink
-              to="/skincare-routine"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
-            >
-              Skincare Routine
-            </NavLink>
+            <div className="relative group">
+              <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
+                <p className="block px-4 py-2 text-center text-2xl">Dupes</p>
+                <CaretDown className="w-5 h-5"/>
+              </div>
+              <div className="hidden group-hover:block absolute left-0 min-[1110px]:mt-0 z-50 bg-white shadow-lg rounded-b-lg">
+                <NavLink
+                  to="/dupes"
+                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                >
+                  Skincare Dupes
+                </NavLink>
+                <NavLink
+                  to="/dupes"
+                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                >
+                  Haircare Dupes
+                </NavLink>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
+                <p className="block px-4 py-2 text-center text-2xl">Generate routine</p>
+                <CaretDown className="w-5 h-5"/>
+              </div>
+              <div className="hidden group-hover:block absolute left-0 min-[1110px]:mt-0 z-50 bg-white shadow-lg rounded-b-lg">
+                <NavLink
+                  to="/skincare-routine"
+                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                >
+                  Skincare Routine
+                </NavLink>
+                <NavLink
+                  to="/skincare-routine"
+                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                >
+                  Haircare Routine
+                </NavLink>
+              </div>
+            </div>
             <NavLink
               to="/about"
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"

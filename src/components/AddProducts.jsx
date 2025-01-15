@@ -68,12 +68,12 @@ function AddProducts({ onSelect }) {
           <div className="mx-auto w-11/12 md:w-3/4 relative"> 
             <SearchHeart className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input 
+              autoFocus
               type="text"
               value={searchTerm}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               placeholder='Type to search'
-              autoFocus
               className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#FFDFE9]"
             />
           </div>
