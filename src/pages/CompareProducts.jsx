@@ -3,7 +3,7 @@ import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import AnalyzedResult from "../components/AnalyzedResult";
 import Loader from "../components/Loader";
-import skincareStore from "../stores/SkincareProductStore";
+import skincareStore from "../stores/skincareProductStore";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 

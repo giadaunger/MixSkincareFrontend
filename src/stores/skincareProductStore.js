@@ -118,4 +118,4 @@ const skincareStore = create((set) => ({
   }
 }));
 
-export default useStore;
+export default skincareStore;

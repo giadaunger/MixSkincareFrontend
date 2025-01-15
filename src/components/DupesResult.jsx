@@ -1,5 +1,5 @@
 import React from 'react'
-import skincareStore from '../stores/SkincareProductStore';
+import skincareStore from '../stores/skincareProductStore';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';  
 import { Link } from 'react-router-dom';

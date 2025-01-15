@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import skincareStore from '../stores/SkincareProductStore'
+import skincareStore from '../stores/skincareProductStore'
 import GoBackBtn from '../components/GoBackBtn';
 import Loader from '../components/Loader'
 

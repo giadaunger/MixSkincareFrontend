@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
-import skincareStore from "../stores/SkincareProductStore";
+import skincareStore from "../stores/skincareProductStore";
 
 function AddProducts({ onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");

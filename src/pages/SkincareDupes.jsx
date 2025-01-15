@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import DupesResult from "../components/DupesResult";
-import skincareStore from "../stores/SkincareProductStore";
+import skincareStore from "../stores/skincareProductStore";
 import Loader from "../components/Loader";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";

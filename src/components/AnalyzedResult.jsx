@@ -1,5 +1,5 @@
 import React from "react";
-import skincareStore from "../stores/SkincareProductStore";
+import skincareStore from "../stores/skincareProductStore";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 import { Ok } from "styled-icons/crypto";
 
