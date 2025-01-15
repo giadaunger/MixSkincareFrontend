@@ -78,7 +78,7 @@ function Navbar() {
                   Skincare Routine
                 </NavLink>
                 <NavLink
-                  to="/skincare-routine"
+                  to="/haircare-routine"
                   className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Haircare Routine
