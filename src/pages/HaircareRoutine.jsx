@@ -7,7 +7,7 @@ import Age from '../components/skincareRoutineForm/Age'
 import RoutineLength from '../components/skincareRoutineForm/RoutineLength'
 import ExperienceLevel from '../components/skincareRoutineForm/ExperienceLevel'
 
-function SkincareRoutine() {
+function HaircareRoutine() {
   const [currentSlideStep, setCurrentSlideStep] = useState(0);
 
   const slides = [
@@ -52,7 +52,7 @@ function SkincareRoutine() {
   return (
     <div className="w-11/12 mx-auto mb-20">
       <div className="w-full md:w-2/3 mx-auto text-center mt-12">
-        <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Build Your Daily Skincare Routine! Skin</h2>
+        <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Build Your Daily Skincare Routine! Hair</h2>
         <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Get a basic routine suggestion based on your skin type and concerns. Simple guidance for your everyday skincare needs.</p>
       </div>
       <div className="bg-[#FFDFE9] rounded-xl p-8 w-5/6 mx-auto">
@@ -100,4 +100,4 @@ function SkincareRoutine() {
   )
 }
 
-export default SkincareRoutine
+export default HaircareRoutine

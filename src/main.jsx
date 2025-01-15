@@ -10,6 +10,7 @@ import SkincareDupes from "./pages/SkincareDupes";
 import HaircareDupes from "./pages/HaircareDupes";
 import ProductPage from "./pages/ProductPage";
 import SkincareRoutine from "./pages/SkincareRoutine";
+import HaircareRoutine from "./pages/HaircareRoutine";
 import About from "./pages/About";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/haircare-dupes" element={<HaircareDupes />}></Route>
           <Route path="/product/:id" element={<ProductPage />}></Route>
           <Route path="/skincare-routine" element={<SkincareRoutine />}></Route>
+          <Route path="/haircare-routine" element={<HaircareRoutine />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Route>
       </Routes>
