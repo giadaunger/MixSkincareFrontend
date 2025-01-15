@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const useFormStore = create((set) => ({
+const useSkincareFormStore = create((set) => ({
   formData: {
     skinType: "",
     skinSensitivity: "",
@@ -34,4 +34,4 @@ const useFormStore = create((set) => ({
   setErrorMsg: (value) => set({ errorMsg: value }),
 }));
 
-export default useFormStore;
+export default useSkincareFormStore;

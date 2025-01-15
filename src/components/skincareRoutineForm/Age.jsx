@@ -1,8 +1,8 @@
 import React from 'react'
-import useFormStore from '../../stores/formStore';
+import useSkincareFormStore from '../../stores/skincareFormStore';
 
 function Age() {
-  const { formData, updateFormField } = useFormStore();
+  const { formData, updateFormField } = useSkincareFormStore();
 
   const handleAgeChange = (e) => {
     updateFormField('age', e.target.value);

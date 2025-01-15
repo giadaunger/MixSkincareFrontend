@@ -1,8 +1,8 @@
 import React from 'react'
-import useFormStore from '../../stores/formStore'
+import useSkincareFormStore from '../../stores/skincareFormStore'
 
 function SkinType() {
-  const { formData, updateFormField } = useFormStore();
+  const { formData, updateFormField } = useSkincareFormStore();
 
   const handleTypeChange = (type) => {
     updateFormField('skinType', type);
