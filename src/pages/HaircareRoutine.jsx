@@ -1,27 +1,26 @@
 import React, {useState} from 'react'
 import { ChevronLeft, ChevronRight } from '@styled-icons/fa-solid'
-import SkinType from '../components/skincareRoutineForm/SkinType'
-import SkinSensitivity from '../components/skincareRoutineForm/SkinSensitivity'
-import SkinConcerns from '../components/skincareRoutineForm/SkinConcerns'
-import Age from '../components/skincareRoutineForm/Age'
-import RoutineLength from '../components/skincareRoutineForm/RoutineLength'
-import ExperienceLevel from '../components/skincareRoutineForm/ExperienceLevel'
+import HairType from '../components/haircareRoutineForm/HairType';
+import HairSensitivity from '../components/haircareRoutineForm/HairSensitivity';
+import HairConcerns from '../components/haircareRoutineForm/HairConcerns';
+import Age from '../components/haircareRoutineForm/Age';
+import RoutineLength from '../components/haircareRoutineForm/RoutineLenght';
 
 function HaircareRoutine() {
   const [currentSlideStep, setCurrentSlideStep] = useState(0);
 
   const slides = [
     {
-      component: <SkinType />,
-      title: "What's your skin type?",
+      component: <HairType />,
+      title: "What's your hair type?",
     },
     {
-      component: <SkinSensitivity />,
-      title: "How sensitive is your skin?",
+      component: <HairSensitivity />,
+      title: "How sensitive is your hair?",
     },
     {
-      component: <SkinConcerns />,
-      title: "What are your skin concerns?",
+      component: <HairConcerns />,
+      title: "What are your hair concerns?",
     },
     {
       component: <Age />,
