@@ -1,10 +1,10 @@
 import React from "react";
-import useStore from "../stores/store";
+import skincareStore from "../stores/SkincareProductStore";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 import { Ok } from "styled-icons/crypto";
 
 function AnalyzedResult() {
-  const { analysisResult } = useStore();
+  const { analysisResult } = skincareStore();
 
   const hasActiveIngredients = analysisResult.active_ingredients?.length > 0;
   const hasIncompatibilities = analysisResult.incompatibility_warnings?.length > 0;

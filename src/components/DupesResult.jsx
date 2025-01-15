@@ -1,11 +1,11 @@
 import React from 'react'
-import useStore from '../stores/store';
+import skincareStore from '../stores/SkincareProductStore';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';  
 import { Link } from 'react-router-dom';
 
 function DupesResult() {
-  const { dupesResult } = useStore();
+  const { dupesResult } = skincareStore();
 
   return (
     <div className="relative w-full h-full p-4"> 

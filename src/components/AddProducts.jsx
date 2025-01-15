@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
-import useStore from "../stores/store";
+import skincareStore from "../stores/SkincareProductStore";
 
 function AddProducts({ onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,7 +12,7 @@ function AddProducts({ onSelect }) {
     searchResults, 
     fetchSearchedProduct, 
     fetchInitialProducts
-  } = useStore();
+  } = skincareStore();
 
    useEffect(() => {
     if (isPopupOpen) {

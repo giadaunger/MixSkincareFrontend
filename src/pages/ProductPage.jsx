@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import useStore from '../stores/store'
+import skincareStore from '../stores/SkincareProductStore'
 import GoBackBtn from '../components/GoBackBtn';
 import Loader from '../components/Loader'
 
 function ProductPage() {
   const { id } = useParams();
-  const { productInfo, fetchProductInfo } = useStore();
+  const { productInfo, fetchProductInfo } = skincareStore();
   const [activeTab, setActiveTab] = useState('description');
 
   useEffect(() => {

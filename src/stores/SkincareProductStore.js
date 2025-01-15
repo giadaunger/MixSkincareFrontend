@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const useStore = create((set) => ({
+const skincareStore = create((set) => ({
   errorMsg: "",
   setErrorMsg: (value) => set({ errorMsg: value }),
 

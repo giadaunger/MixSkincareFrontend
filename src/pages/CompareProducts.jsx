@@ -3,7 +3,7 @@ import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import AnalyzedResult from "../components/AnalyzedResult";
 import Loader from "../components/Loader";
-import useStore from "../stores/store";
+import skincareStore from "../stores/SkincareProductStore";
 import { Trash3Fill } from "styled-icons/bootstrap";
 import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
@@ -24,7 +24,7 @@ function CompareProducts() {
     setFirstCompareProduct,
     secondCompareProduct,
     setSecondCompareProduct
-  } = useStore();
+  } = skincareStore();
 
   useEffect(() => {
     if(selectedCompareProduct && activeCard === 1) {
