@@ -5,6 +5,7 @@ import HairSensitivity from '../components/haircareRoutineForm/HairSensitivity';
 import HairConcerns from '../components/haircareRoutineForm/HairConcerns';
 import Age from '../components/haircareRoutineForm/Age';
 import RoutineLength from '../components/haircareRoutineForm/RoutineLenght';
+import ExperienceLevel from '../components/haircareRoutineForm/ExperienceLevel';
 
 function HaircareRoutine() {
   const [currentSlideStep, setCurrentSlideStep] = useState(0);
