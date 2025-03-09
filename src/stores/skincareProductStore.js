@@ -1,6 +1,9 @@
 import { create } from "zustand";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const skincareStore = create((set) => ({
+
   errorMsg: "",
   setErrorMsg: (value) => set({ errorMsg: value }),
 
@@ -31,7 +34,7 @@ const skincareStore = create((set) => ({
   setSearchResults: (results) => set({ searchResults: results }),
   fetchSearchedProduct: async (chosenProduct) => {
     try {
-      const respons = await fetch(`http://localhost:8000/product/${chosenProduct}`, {
+      const respons = await fetch(`${API_URL}/product/${chosenProduct}`, {
         method: "GET",
       });
       if(!respons.ok) {
@@ -49,7 +52,7 @@ const skincareStore = create((set) => ({
   setAnalysisResult: (result) => set({ analysisResult: result}),
   analyzeCompatibility: async (product1_id, product2_id) => {
     try {
-      const respons = await fetch(`http://localhost:8000/analyze-compatibility/${product1_id}/${product2_id}`, {
+      const respons = await fetch(`${API_URL}/analyze-compatibility/${product1_id}/${product2_id}`, {
         method: "POST",
       });
       if(!respons.ok) {
@@ -68,7 +71,7 @@ const skincareStore = create((set) => ({
   setDupesResult: (result) => set({ dupesResult: result }),
   fetchDupes: async (product) => {
     try {
-      const respons = await fetch(`http://localhost:8000/product/${product}/similar`, {
+      const respons = await fetch(`${API_URL}/product/${product}/similar`, {
         method: "GET"
       });
       if(!respons.ok) {
@@ -85,7 +88,7 @@ const skincareStore = create((set) => ({
 
   fetchInitialProducts: async () => {
     try {
-      const respons = await fetch("http://localhost:8000/product/ingredients", {
+      const respons = await fetch(`${API_URL}/product/ingredients`, {
         method: "GET",
       });
       if(!respons.ok) {
@@ -103,7 +106,7 @@ const skincareStore = create((set) => ({
   setProductInfo: (result) => set({ productInfo: result}),
   fetchProductInfo: async (id) => {
     try {
-      const respons = await fetch(`http://localhost:8000/product/id/${id}`, {
+      const respons = await fetch(`${API_URL}/product/id/${id}`, {
         method: "GET",
       });
       if(!respons.ok) {
