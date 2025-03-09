@@ -45,7 +45,19 @@ function Navbar() {
             >
               Compare Products
             </NavLink>
-            <div className="relative group">
+            <NavLink
+              to="/skincare-dupes"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+            >
+              Skincare Dupes
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
+            >
+              About
+            </NavLink>
+            {/* <div className="relative group">
               <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
                 <p className="block px-4 py-2 text-center text-2xl">Dupes</p>
                 <CaretDown className="w-5 h-5"/>
@@ -84,13 +96,7 @@ function Navbar() {
                   Haircare Routine
                 </NavLink>
               </div>
-            </div>
-            <NavLink
-              to="/about"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
-            >
-              About
-            </NavLink>
+            </div> */}
           </div>
         </div>
       </div>
