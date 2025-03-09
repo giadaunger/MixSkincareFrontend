@@ -87,7 +87,7 @@ function AddProducts({ onSelect }) {
                   index === selectedIndex ? 'bg-[#E2A3B7] rounded-lg' : ''
                 }`}
               >
-                <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10" />
+                <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10 bg-white rounded-lg p-1" />
                 <div>
                   <h3 className="font-semibold">{product.product_name}</h3>
                   <p className="text-sm">{product.company_name}</p>
