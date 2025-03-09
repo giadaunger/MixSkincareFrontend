@@ -64,7 +64,7 @@ const skincareStore = create((set) => ({
     }
   },
 
-  dupesResult: [],
+  dupesResult: null,
   setDupesResult: (result) => set({ dupesResult: result }),
   fetchDupes: async (product) => {
     try {

@@ -7,9 +7,18 @@ import { Link } from 'react-router-dom';
 function DupesResult() {
   const { dupesResult } = skincareStore();
 
+  const sortedProducts = [...dupesResult.similar_products].sort((a, b) => {
+    const percentA = Math.round((a.matching_ingredients.length / a.total_ingredients) * 100);
+    const percentB = Math.round((b.matching_ingredients.length / b.total_ingredients) * 100);
+    return percentB - percentA;
+  });
+
+  console.log(sortedProducts);
+  
+
   return (
     <div className="relative w-full h-full p-4"> 
-      {dupesResult.similar_products?.map((product) => (  
+      {sortedProducts.map((product) => (  
         <Link to={`/product/${product.id}`}>
           <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between p-4 w-full md:w-2/3 mx-auto bg-[#FFDFE9] rounded-xl mb-10 transform transition duration-300 hover:scale-105">
             <div className="flex flex-col items-center">
