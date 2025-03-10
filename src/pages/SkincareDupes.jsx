@@ -30,7 +30,7 @@ function SkincareDupes() {
   const handleDeleteProduct = (productNumber) => {
     if(productNumber === 1) {
       setChosenProduct(null);
-      setDupesResult([]);
+      setDupesResult(null);
     }
   }
 

@@ -13,9 +13,6 @@ function DupesResult() {
     return percentB - percentA;
   });
 
-  console.log(sortedProducts);
-  
-
   return (
     <div className="relative w-full h-full p-4"> 
       {sortedProducts.map((product) => (  
