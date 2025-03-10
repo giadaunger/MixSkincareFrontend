@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
 import skincareStore from "../stores/skincareProductStore";
+import { P } from "styled-icons/fa-solid";
 
 function AddProducts({ onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -79,21 +80,29 @@ function AddProducts({ onSelect }) {
           </div>
 
           <div className="mt-4 max-h-60 overflow-y-auto">
-            {searchResults.map((product, index) => (
-              <div 
-                key={product.id}
-                onClick={() => handleProductSelect(product)}
-                className={`p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto ${
-                  index === selectedIndex ? 'bg-[#E2A3B7] rounded-lg' : ''
-                }`}
-              >
-                <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10 bg-white rounded-lg p-1" />
-                <div>
-                  <h3 className="font-semibold">{product.product_name}</h3>
-                  <p className="text-sm">{product.company_name}</p>
-                </div>
+            {searchResults.length > 0 ? (
+              <>
+                {searchResults.map((product, index) => (
+                  <div 
+                    key={product.id}
+                    onClick={() => handleProductSelect(product)}
+                    className={`p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto ${
+                      index === selectedIndex ? 'bg-[#E2A3B7] rounded-lg' : ''
+                    }`}
+                  >
+                    <img src={product.product_img} alt="" className="w-10 h-10 object-scale-down mr-10 bg-white rounded-lg p-1" />
+                    <div>
+                      <h3 className="font-semibold">{product.product_name}</h3>
+                      <p className="text-sm">{product.company_name}</p>
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="p-2 text-center mt-10">
+                <p>No products found</p>
               </div>
-            ))}
+            )}
           </div>
       </div>
       )}
