@@ -44,9 +44,9 @@ function BannerSlides() {
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
             <div className={`relative z-10 p-6 md:p-10 lg:p-16 max-w-md ${slide.styling === "left" ? "ml-6 md:ml-16" : "ml-auto mr-6 md:mr-16"}`}>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">{slide.slogan}</h2>
-              <p className="text-sm md:text-base mb-4">{slide.text}</p>
-              <button className="bg-[#E2A3B7] text-white px-4 py-2 rounded-md hover:bg-[#d38ea5] transition-colors">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">{slide.slogan}</h2>
+              <p className="text-sm md:text-base mb-4 text-white">{slide.text}</p>
+              <button className="bg-[#E2A3B7] text-white px-4 py-2 mt-10 rounded-md hover:bg-[#d38ea5] transition-colors flex mx-auto">
                 {slide.buttonText}
               </button>
             </div>
