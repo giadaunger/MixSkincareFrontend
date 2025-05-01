@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { CaretDown } from "styled-icons/bootstrap";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

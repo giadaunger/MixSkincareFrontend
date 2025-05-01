@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Layout() {
   return (
@@ -9,6 +10,7 @@ function Layout() {
       <div className="flex-auto">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }
