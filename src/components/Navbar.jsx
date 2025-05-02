@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { CaretDown } from "styled-icons/bootstrap";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,16 +40,10 @@ function Navbar() {
         >
           <div className="flex flex-col min-[1110px]:flex-row space-y-4 min-[1110px]:space-y-0 min-[1110px]:space-x-10">
             <NavLink
-              to="/compare"
+              to="/blog"
               className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
             >
-              Compare Products
-            </NavLink>
-            <NavLink
-              to="/skincare-dupes"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
-            >
-              Skincare Dupes
+              Blog
             </NavLink>
             <NavLink
               to="/about"
@@ -56,33 +51,39 @@ function Navbar() {
             >
               About
             </NavLink>
-            <NavLink
-              to="/products"
-              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
-            >
-              Products
-            </NavLink>
-            {/* <div className="relative group">
+            <div className="relative group">
               <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
-                <p className="block px-4 py-2 text-center text-2xl">Dupes</p>
+                <p className="block px-4 py-2 text-center text-2xl">Tools</p>
                 <CaretDown className="w-5 h-5"/>
               </div>
-              <div className="hidden group-hover:block absolute left-0 min-[1110px]:mt-0 z-50 bg-white shadow-lg rounded-b-lg">
+              <div className="hidden group-hover:block absolute -left-12 min-[1110px]:mt-0 z-50 w-60 bg-white shadow-lg rounded-b-lg">
                 <NavLink
                   to="/skincare-dupes"
-                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                  className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Skincare Dupes
                 </NavLink>
                 <NavLink
                   to="/haircare-dupes"
-                  className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
+                  className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Haircare Dupes
                 </NavLink>
+                <NavLink
+                  to="/compare"
+                  className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
+                >
+                  Compare Products
+                </NavLink>
+                <NavLink
+                  to="/products"
+                  className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
+                >
+                  Products
+                </NavLink>
               </div>
             </div>
-            <div className="relative group">
+            {/* <div className="relative group">
               <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
                 <p className="block px-4 py-2 text-center text-2xl">Generate routine</p>
                 <CaretDown className="w-5 h-5"/>
@@ -101,7 +102,7 @@ function Navbar() {
                   Haircare Routine
                 </NavLink>
               </div>
-            </div> */}
+            </div>  */}
           </div>
         </div>
       </div>
