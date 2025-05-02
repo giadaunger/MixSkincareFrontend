@@ -1,11 +1,16 @@
 import React from 'react'
 import skincareStore from '../stores/skincareProductStore';
+import statsStore from '../stores/statsStore';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';  
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function DupesResult() {
   const { dupesResult } = skincareStore();
+  const { trackProductView } = statsStore();
+
+  const navigate = useNavigate();
 
   const sortedProducts = [...dupesResult.similar_products].sort((a, b) => {
     const percentA = Math.round((a.matching_ingredients.length / a.total_ingredients) * 100);
@@ -13,12 +18,25 @@ function DupesResult() {
     return percentB - percentA;
   });
 
+  const handleProductClick = (productId, e) => {
+    e.preventDefault(); 
+    
+    trackProductView(productId)
+      .then(() => {
+        navigate(`/product/${productId}`);
+      });
+  };
+
   return (
     <div className="relative w-full h-full p-4"> 
       {sortedProducts.length > 0 ? (
         <>
           {sortedProducts.map((product) => (  
-            <Link to={`/product/${product.id}`}>
+            <Link 
+              onClick={(e) => handleProductClick(product.id, e)}
+              key={product.id}
+              to={`/product/${product.id}`}
+            >
               <div key={product.id} className="flex flex-col sm:flex-row items-center justify-between p-4 w-full md:w-2/3 mx-auto bg-[#FFDFE9] rounded-xl mb-10 transform transition duration-300 hover:scale-105">
                 <div className="flex flex-col items-center">
                   <div className="bg-white rounded-lg p-1 mb-2">
