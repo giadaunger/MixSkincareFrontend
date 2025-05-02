@@ -16,7 +16,7 @@ const statsStore = create((set) => ({
     }
   },
   popularProducts: [],
-  fetchPopularProducts: async (limit = 25) => {
+  fetchPopularProducts: async (limit = 15) => {
     try {
       set({ isLoading: true });
       const response = await fetch(`${API_URL}/popular-products?limit=${limit}`, {
