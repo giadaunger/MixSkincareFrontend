@@ -12,6 +12,7 @@ import ProductPage from "./pages/ProductPage";
 import SkincareRoutine from "./pages/SkincareRoutine";
 import HaircareRoutine from "./pages/HaircareRoutine";
 import About from "./pages/About";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/skincare-routine" element={<SkincareRoutine />}></Route>
           <Route path="/haircare-routine" element={<HaircareRoutine />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/products" element={<Products />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
