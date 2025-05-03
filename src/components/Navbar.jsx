@@ -51,12 +51,18 @@ function Navbar() {
             >
               About
             </NavLink>
+            <NavLink
+              to="/sales"
+              className="block px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
+            >
+              Sales
+            </NavLink>
             <div className="relative group">
               <div className="flex items-center transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] cursor-pointer">
                 <p className="block px-4 py-2 text-center text-2xl">Tools</p>
                 <CaretDown className="w-5 h-5"/>
               </div>
-              <div className="hidden group-hover:block absolute -left-12 min-[1110px]:mt-0 z-50 w-60 bg-white shadow-lg rounded-b-lg">
+              <div className="hidden group-hover:block absolute -left-16 min-[1110px]:mt-0 z-50 w-56 bg-white shadow-lg rounded-b-lg">
                 <NavLink
                   to="/skincare-dupes"
                   className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"

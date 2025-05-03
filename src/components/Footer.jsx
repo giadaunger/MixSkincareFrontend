@@ -22,6 +22,12 @@ function Footer() {
             About
           </NavLink>
           <NavLink
+            to="/contact"
+            className="block px-4 py-1 text-xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
+          >
+            Contact
+          </NavLink>
+          <NavLink
             to="/privacy-policy"
             className="block px-4 py-1 text-xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
           >

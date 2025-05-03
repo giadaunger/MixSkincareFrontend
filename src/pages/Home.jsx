@@ -5,12 +5,12 @@ import statsStore from '../stores/statsStore'
 import { useNavigate } from 'react-router-dom'
 
 function Home() {
-  const { fetchPopularProducts, popularProducts, trackProductView } = statsStore();
+  const { fetchFrontPageProducts, frontPageProducts, trackProductView } = statsStore();
 
   const navigate = useNavigate();
   
   useEffect(() => {
-    fetchPopularProducts();
+    fetchFrontPageProducts();
   }, []);
     
   const handleProductClick = (productId, e) => {
@@ -30,7 +30,7 @@ function Home() {
       <div className="w-5/6 mx-auto justify-center mt-20 mb-20">
         <h2 className="text-4xl md:text-6xl text-center mb-10">Popular products</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 gap-y-20">
-          {popularProducts.map(product => (
+          {frontPageProducts.map(product => (
             <Link 
               key={product.id} 
               to={`/product/${product.id}`}
