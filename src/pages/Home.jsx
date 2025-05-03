@@ -51,6 +51,14 @@ function Home() {
             </Link>
           ))}
         </div>
+        <div className="w-full mt-20">
+          <button 
+            onClick={() => navigate("/products")}
+            className={`mt-2 flex mx-auto p-2 text-xl border rounded-md border-[#e2a3b7] text-[#e2a3b7] hover:bg-[#e2a3b7] hover:text-white `}
+          >
+            Show more
+          </button>
+        </div>
         <div className="mb-20 mt-36">
           <h2 className="text-center text-[#E2A3B7] text-3xl sm:text-5xl mb-10">
             Why is product compatibility important?
