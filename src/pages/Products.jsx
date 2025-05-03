@@ -3,9 +3,12 @@ import { SearchHeart } from "styled-icons/bootstrap";
 import statsStore from '../stores/statsStore';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { ArrowAltCircleUp } from 'styled-icons/fa-solid';
 
 function Products() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  
   const { 
     fetchPopularProducts, 
     popularProducts, 
@@ -20,6 +23,23 @@ function Products() {
   useEffect(() => {
     resetPagination(); 
     fetchPopularProducts();
+    
+    const handleScroll = () => {
+      setShowScrollButton(true);
+      
+      const footer = document.querySelector('footer') || document.querySelector('.footer-area');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        if (footerRect.top < windowHeight && footerRect.bottom > 0) {
+          setShowScrollButton(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleInputChange = (e) => { 
@@ -85,6 +105,17 @@ function Products() {
             className={`mt-2 flex mx-auto p-2 text-xl border rounded-md border-[#e2a3b7] text-[#e2a3b7] hover:bg-[#e2a3b7] hover:text-white ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {isLoading ? 'Loading...' : 'Show more'}
+          </button>
+        </div>
+      )}
+      {showScrollButton && (
+        <div className="fixed bottom-5 right-5 z-50">
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Scroll to top"
+            className="bg-opacity-70 rounded-full shadow-md"
+          >
+            <ArrowAltCircleUp className="text-[#e2a3b7] h-12 w-12 hover:text-[#d68a9e] transition-colors" />
           </button>
         </div>
       )}
