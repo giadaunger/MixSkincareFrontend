@@ -69,12 +69,12 @@ function Navbar() {
                 >
                   Skincare Dupes
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   to="/haircare-dupes"
                   className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
                 >
                   Haircare Dupes
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to="/compare"
                   className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"

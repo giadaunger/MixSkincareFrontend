@@ -17,13 +17,7 @@ function Products() {
     hasMore, 
     resetPagination 
   } = statsStore();
-  const {
-    isPopupOpen, 
-    setIsPopupOpen, 
-    searchResults, 
-    fetchSearchedProduct, 
-    fetchInitialProducts
-  } = skincareStore();
+  const { searchResults, fetchSearchedProduct} = skincareStore();
 
   const navigate = useNavigate();
   const displayProducts = searchTerm.trim() === "" ? popularProducts : searchResults;
