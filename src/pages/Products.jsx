@@ -65,7 +65,6 @@ function Products() {
       });
   };
   
-  
   return (
     <div className="w-5/6 mx-auto mt-12 mb-20">
       <div className="mx-auto w-11/12 md:w-3/4 relative mb-20"> 

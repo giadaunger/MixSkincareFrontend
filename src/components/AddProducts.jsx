@@ -2,21 +2,24 @@ import React, { useState, useEffect } from "react";
 import { SearchHeart } from "styled-icons/bootstrap";
 import { Close } from "@styled-icons/ionicons-solid/Close";
 import skincareStore from "../stores/skincareProductStore";
+import statsStore from "../stores/statsStore";
 
 function AddProducts({ onSelect }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const { fetchFrontPageProducts, frontPageProducts, trackProductView } = statsStore();
   const {
     isPopupOpen, 
     setIsPopupOpen, 
     searchResults, 
     fetchSearchedProduct, 
-    fetchInitialProducts
   } = skincareStore();
 
-   useEffect(() => {
+  const displayProducts = searchTerm.trim() === "" ? frontPageProducts : searchResults;
+
+  useEffect(() => {
     if (isPopupOpen) {
-      fetchInitialProducts(); 
+      fetchFrontPageProducts(); 
     }
   }, [isPopupOpen]); 
 
@@ -30,10 +33,16 @@ function AddProducts({ onSelect }) {
     fetchSearchedProduct(term);
   }
 
-  const handleProductSelect = (product) => {
-    onSelect(product);
-    setIsPopupOpen(false);
-    setSearchTerm("");
+  const handleProductSelect = (product, e) => {
+
+    e.preventDefault(); 
+    
+    trackProductView(product.id)
+      .then(() => {
+        onSelect(product);
+        setIsPopupOpen(false);
+        setSearchTerm("");
+      });
   }
 
   const handleKeyDown = (e) => {
@@ -79,12 +88,12 @@ function AddProducts({ onSelect }) {
           </div>
 
           <div className="mt-4 max-h-60 overflow-y-auto">
-            {searchResults.length > 0 ? (
+            {displayProducts.length > 0 ? (
               <>
-                {searchResults.map((product, index) => (
+                {displayProducts.map((product, index) => (
                   <div 
                     key={product.id}
-                    onClick={() => handleProductSelect(product)}
+                    onClick={(e) => handleProductSelect(product, e)}
                     className={`p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto ${
                       index === selectedIndex ? 'bg-[#E2A3B7] rounded-lg' : ''
                     }`}
