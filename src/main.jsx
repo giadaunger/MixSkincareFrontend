@@ -18,7 +18,7 @@ import Contact from "./pages/Contact";
 import Sales from "./pages/Sales";
 
 // Blogs
-import NaturalRemedies from "./components/blogPages/NaturalRemedies";
+import NaturalRemedies from "./components/blogPosts/NaturalRemedies";
 
 function App() {
   return (

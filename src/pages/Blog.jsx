@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { blogs } from '../components/blogPages/blogs'
+import { blogs } from '../components/blogPosts/blogs'
 import { Link } from 'react-router-dom'
 
 function Blog() {
