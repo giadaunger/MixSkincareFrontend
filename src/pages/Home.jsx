@@ -28,7 +28,7 @@ function Home() {
         <BannerSlides />
       </div>
       <div className="w-5/6 mx-auto justify-center mt-20 mb-20">
-        <h2 className="text-4xl md:text-6xl text-center mb-10">Popular products</h2>
+        <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Popular products</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 gap-y-20">
           {frontPageProducts.map(product => (
             <Link 
