@@ -14,6 +14,8 @@ import HaircareRoutine from "./pages/HaircareRoutine";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Sales from "./pages/Sales";
 
 // Blogs
 import NaturalRemedies from "./components/blogPages/NaturalRemedies";
@@ -33,6 +35,8 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/products" element={<Products />}></Route>
           <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/sales" element={<Sales />}></Route>
 
           {/* Blogs */}
           <Route path="/blog/glow-naturally-3-diy-beauty-remedies" element={<NaturalRemedies />}></Route>
