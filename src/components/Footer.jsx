@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Footer() {
   return (
     <footer className="p-4 shadow-md">
-      <div className="container mx-auto flex flex-col min-[1110px]:flex-row items-center justify-between border-t border-gray-200">
+      <div className="container mx-auto flex flex-row items-center justify-between border-t border-gray-200">
         <div>
           <NavLink to="/">
             <img
@@ -40,6 +40,9 @@ function Footer() {
             Cookie Policy
           </NavLink>
         </div>
+      </div>
+      <div className="pt-4 w-full text-center text-gray-400">
+        <p>© 2025 MixSkincare. All rights reserved.</p>
       </div>
     </footer>
   )
