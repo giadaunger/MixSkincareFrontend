@@ -19,7 +19,7 @@ function Sales() {
       </div>
       <div className="w-3/4 mx-auto flex flex-col gap-y-10 mt-10">
         <Link to={"https://www.kicks.se/makeup/ogonmakeup"} target="_blank" rel="noopener noreferrer">
-          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between transform transition duration-300 hover:scale-105">
             <div className="items-center flex flex-row">
               <img 
                 src="/logos/kicksLogo.png" 
@@ -34,7 +34,7 @@ function Sales() {
           </div>
         </Link>
         <Link to={"https://www.kicks.se/makeup/lappar"} target="_blank" rel="noopener noreferrer">
-          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between transform transition duration-300 hover:scale-105">
             <div className="items-center flex flex-row">
               <img 
                 src="/logos/kicksLogo.png" 
@@ -49,7 +49,7 @@ function Sales() {
           </div>
         </Link>
         <Link to={"https://lyko.com/sv/gigantic-sale"} target="_blank" rel="noopener noreferrer">
-          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-row justify-between transform transition duration-300 hover:scale-105">
             <div className="items-center flex flex-row">
               <img 
                 src="/logos/lykoLogo.jpeg" 

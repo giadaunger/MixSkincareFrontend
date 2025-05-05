@@ -14,7 +14,6 @@ function Blog() {
   }, []);
 
   const trackClick = (blog) => {
-    console.log("blog: ", blog);
     trackBlogView(blog.path);
 };
 
@@ -75,12 +74,12 @@ function Blog() {
         </p>
       </div>    
       <div className="mb-10 w-1/2 mx-auto">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center">
           {allTags.map((tag, index) => (
             <button
               key={index}
               onClick={() => !disabledFilters.includes(tag) && toggleFilter(tag)}
-              className={`rounded-full px-3 p-1 text-sm ${
+              className={`rounded-full px-3 p-1 text-sm transform transition duration-300 hover:scale-105 ${
                 selectedFilters.includes(tag)
                   ? 'bg-[#e2a3b7] text-white font-semibold'
                   : disabledFilters.includes(tag)
@@ -111,7 +110,7 @@ function Blog() {
             key={index}
             onClick={() => trackClick(blog)}
           >
-            <div className="w-40 sm:w-60 h-80 p-2 bg-gray-100 rounded-md mx-auto flex flex-col shadow-md">
+            <div className="w-40 sm:w-60 h-80 p-2 bg-gray-100 rounded-md mx-auto flex flex-col shadow-md transform transition duration-300 hover:scale-105">
               <div>
                 <img src={blog.img} className="rounded-md" alt={blog.title} />
                 <p className="text-xl text-center mb-4 mt-2">{blog.title}</p>
