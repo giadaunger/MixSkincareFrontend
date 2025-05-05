@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { blogs } from '../components/blogPosts/blogs'
 import { Link } from 'react-router-dom'
+import statsStore from '../stores/statsStore';
 
 function Blog() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
   const [disabledFilters, setDisabledFilters] = useState([]);
+  const { trackBlogView, fetchPopularBlogs, popularBlogs } = statsStore();
+
+  useEffect(() => {
+    fetchPopularBlogs();
+  }, []);
+
+  const trackClick = (blog) => {
+    console.log("blog: ", blog);
+    trackBlogView(blog.path);
+};
 
   const allTags = [...new Set(blogs.flatMap(blog => blog.tags))];
   
   useEffect(() => {
+    const sortedBlogs = [...blogs].sort((a, b) => {
+      const aViews = popularBlogs.find(pb => pb.path === a.path)?.viewCount || 0;
+      const bViews = popularBlogs.find(pb => pb.path === b.path)?.viewCount || 0;
+      return bViews - aViews; 
+    });
+
     if (selectedFilters.length === 0) {
-      setFilteredBlogs(blogs);
+      setFilteredBlogs(sortedBlogs);
       setDisabledFilters([]);
     } else {
-      const newFilteredBlogs = blogs.filter(blog => 
+      const newFilteredBlogs = sortedBlogs.filter(blog => 
         selectedFilters.every(filter => blog.tags.includes(filter))
       );
       setFilteredBlogs(newFilteredBlogs);
@@ -29,7 +46,7 @@ function Blog() {
       });
       setDisabledFilters(newDisabledFilters);
     }
-  }, [selectedFilters]);
+  }, [selectedFilters, popularBlogs]);
   
   const toggleFilter = (tag) => {
     if (selectedFilters.includes(tag)) {
@@ -89,7 +106,11 @@ function Blog() {
       </div>      
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-20 mb-20">
         {filteredBlogs.map((blog, index) => (
-          <Link to={blog.path} key={index}>
+          <Link 
+            to={blog.path} 
+            key={index}
+            onClick={() => trackClick(blog)}
+          >
             <div className="w-40 sm:w-60 h-80 p-2 bg-gray-100 rounded-md mx-auto flex flex-col shadow-md">
               <div>
                 <img src={blog.img} className="rounded-md" alt={blog.title} />

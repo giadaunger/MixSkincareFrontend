@@ -43,7 +43,7 @@ function App() {
           <Route path="/cookies" element={<Cookies />}></Route>
 
           {/* Blogs */}
-          <Route path="/blog/glow-naturally-3-diy-beauty-remedies" element={<NaturalRemedies />}></Route>
+          <Route path="/glow-naturally-3-diy-beauty-remedies" element={<NaturalRemedies />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

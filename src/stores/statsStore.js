@@ -15,6 +15,7 @@ const statsStore = create((set, get) => ({
       console.log("Error tracking product view: ", error);
     }
   },
+
   popularProducts: [],
   frontPageProducts: [],
   isLoading: false,
@@ -70,6 +71,49 @@ const statsStore = create((set, get) => ({
   
   resetPagination: () => {
     set({ offset: 0, hasMore: true, popularProducts: [] });
+  },
+
+  trackBlogView: async (blogPath) => {
+    console.log("blogPath: ", blogPath);
+    
+    try {
+      const response = await fetch(`${API_URL}/track/blog-view${blogPath}`, {
+        method: "POST"
+      });
+      if (!response.ok) {
+        console.log("Failed to track blog view");
+      }
+    } catch (error) {
+      console.log("Error tracking blog view: ", error);
+    }
+},
+
+  popularBlogs: [],
+
+  fetchPopularBlogs: async () => {
+    try {
+      set({ isLoading: true });
+      
+      const response = await fetch(`${API_URL}/popular-blogs`, {
+        method: "GET",
+      });
+      
+      if (!response.ok) {
+        console.log("Failed to fetch popular blogs");
+        throw new Error("Failed to fetch popular blogs");
+      }
+      
+      const data = await response.json();
+      
+      set({ 
+        popularBlogs: data, 
+        isLoading: false
+      });
+      
+    } catch (error) {
+      console.log("Error fetching popular blogs: ", error);
+      set({ isLoading: false, errorMsg: "Failed to fetch popular blogs." });
+    }
   }
 }));
 
