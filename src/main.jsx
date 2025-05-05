@@ -16,6 +16,8 @@ import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Sales from "./pages/Sales";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Cookies from "./pages/Cookies";
 
 // Blogs
 import NaturalRemedies from "./components/blogPosts/NaturalRemedies";
@@ -37,6 +39,8 @@ function App() {
           <Route path="/blog" element={<Blog />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/sales" element={<Sales />}></Route>
+          <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
+          <Route path="/cookies" element={<Cookies />}></Route>
 
           {/* Blogs */}
           <Route path="/blog/glow-naturally-3-diy-beauty-remedies" element={<NaturalRemedies />}></Route>

@@ -77,8 +77,8 @@ function Contact() {
             className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#e2a3b7]"
             required
           />
+          {errorMsg.email && <p className="text-red-500 text-sm">{errorMsg.email}</p>}
         </div>
-        {errorMsg.email && <p className="text-red-500 text-sm mt-1">{errorMsg.email}</p>}
 
         <div className="flex flex-col">
           <label htmlFor="firstName" className="mb-1 font-medium">Firstname: *</label>
@@ -91,8 +91,8 @@ function Contact() {
             className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#e2a3b7]"
             required
           />
+          {errorMsg.firstName && <p className="text-red-500 text-sm">{errorMsg.firstName}</p>}
         </div>
-        {errorMsg.firstName && <p className="text-red-500 text-sm mt-1">{errorMsg.firstName}</p>}
 
         <div className="flex flex-col">
           <label htmlFor="topic" className="mb-1 font-medium">Topic: *</label>
@@ -121,8 +121,8 @@ function Contact() {
             className="border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#e2a3b7]"
             required
           ></textarea>
+          {errorMsg.message && <p className="text-red-500 text-sm">{errorMsg.message}</p>}
         </div>
-        {errorMsg.message && <p className="text-red-500 text-sm mt-1">{errorMsg.message}</p>}
 
         <div className="w-full flex flex-row space-x-4 justify-center mt-4">
           <button 
