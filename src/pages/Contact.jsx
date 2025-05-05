@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import skincareStore from '../stores/skincareProductStore';
 import emailjs from '@emailjs/browser';
 
@@ -11,6 +11,13 @@ function Contact() {
     topic: 'Complaint',
     message: ''
   });
+
+  useEffect(() => {  
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
 
   const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -99,7 +106,6 @@ function Contact() {
         <p className="text-6xl mb-4">Thank you for reaching out!</p>
         <p className="text-xl">We’ll get back to you within 1–3 business days</p>
       </div>
-      
       ) : (
         <div className="p-6 border border-[#e2a3b7] rounded-md w-11/12 max-w-md mx-auto shadow-md mb-10 mt-10">
           <h2 className="text-2xl font-bold mb-4 text-center">Contact</h2>
