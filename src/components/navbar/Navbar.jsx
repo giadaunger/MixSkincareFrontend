@@ -4,7 +4,7 @@ import NavSmallScreen from "./NavSmallScreen";
 
 function Navbar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const breakpoint = 1110;
+  const breakpoint = 700;
 
   useEffect(() => {
     const handleResize = () => {
