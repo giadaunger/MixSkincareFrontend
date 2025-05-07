@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Plus } from "@styled-icons/evaicons-solid/Plus";
 import AddProducts from "../components/AddProducts";
 import DupesResult from "../components/DupesResult";
@@ -20,6 +20,7 @@ function SkincareDupes() {
     setSelectedDupeProduct
   } = skincareStore();
   const [chosenProduct, setChosenProduct] = useState("");
+  const dupesResultRef = useRef(null);
 
   useEffect(() => {
     if(selectedDupeProduct && !chosenProduct) {
@@ -41,10 +42,11 @@ function SkincareDupes() {
       setIsLoading(true);
       await fetchDupes(chosenProduct.id);
       
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: 'smooth'
-      });
+      setTimeout(() => {
+        if (dupesResultRef.current) {
+          dupesResultRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } finally {
       setIsLoading(false);
     }
@@ -121,7 +123,9 @@ function SkincareDupes() {
             <Loader />
           }
           {dupesResult && selectedDupeProduct &&
-            <DupesResult />
+            <div ref={dupesResultRef}>
+              <DupesResult />
+            </div>
           }
         </div>
       </div>
