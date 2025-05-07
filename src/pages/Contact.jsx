@@ -108,7 +108,7 @@ function Contact() {
       </div>
       ) : (
         <div className="p-6 border border-[#e2a3b7] rounded-md w-11/12 max-w-md mx-auto shadow-md mb-10 mt-10">
-          <h2 className="text-2xl font-bold mb-4 text-center">Contact</h2>
+          <h2 className="text-4xl mb-4 text-center text-[#e2a3b7] ">Contact</h2>
           <div className="flex flex-col space-y-4">
             <div className="flex flex-col">
               <label htmlFor="email" className="mb-1 font-medium">Email: *</label>
