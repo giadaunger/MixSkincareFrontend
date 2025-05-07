@@ -1,8 +1,12 @@
 import React from 'react'
+import GoBackBtn from '../GoBackBtn'
 
 function NaturalRemedies() {
   return (
-    <div className="sm:w-3/4 w-11/12 mx-auto mt-20 mb-10">
+    <div className="sm:w-3/4 w-11/12 mx-auto mt-10">
+      <div className="md:-ml-24 mb-10">
+        <GoBackBtn />
+      </div>
       <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Glow Naturally: 3 DIY Beauty Remedies</h2>
       <p className="text-xl">
         Looking to upgrade your skincare routine without breaking the bank or exposing your skin 
