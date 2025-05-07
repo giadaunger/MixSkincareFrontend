@@ -3,7 +3,7 @@ import GoBackBtn from '../GoBackBtn'
 
 function NaturalRemedies() {
   return (
-    <div className="sm:w-3/4 w-11/12 mx-auto mt-10">
+    <div className="sm:w-3/4 w-11/12 mx-auto mt-10 mb-10">
       <div className="md:-ml-24 mb-10">
         <GoBackBtn />
       </div>

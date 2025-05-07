@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function About() {
+  
+  useEffect(() => {  
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   return (
     <div className="w-11/12 mx-auto mt-12 mb-20">
       <div className="w-5/6 mx-auto justify-center text-center text">
