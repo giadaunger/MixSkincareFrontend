@@ -25,7 +25,7 @@ function ProductPage() {
       <GoBackBtn />
       <div className="w-5/6 md:w-2/3 mx-auto flex flex-col min-[1000px]:flex-row justify-center gap-10">
         <div className="w-full min-[1000px]:w-1/3">
-          <img src={productInfo.product_img} alt="" className="mx-auto" />
+          <img src={productInfo.product_img} alt="" className="mx-auto max-h-96" />
         </div>
         <div className="w-full min-[1000px]:w-2/3">
           <div className="mb-32 text-center min-[1000px]:text-left">
@@ -90,7 +90,7 @@ function ProductPage() {
           </div>
         </div>
       </div>
-      <div className="w-5/6 md:w-2/3 mx-auto mt-40 space-y-10 mb-20">
+{/*       <div className="w-5/6 md:w-2/3 mx-auto mt-40 space-y-10 mb-20">
         <div className="bg-[#FFDFE9] w-full rounded-md flex flex-row p-4 justify-between items-center">
           <div>Logo</div>
           <div className="flex flex-row space-x-5 items-center">
@@ -112,7 +112,7 @@ function ProductPage() {
             <button className="bg-white text-black p-2 items-center">Go to store</button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
