@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Cookies() {
+
+  useEffect(() => {  
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   return (
     <div className="w-11/12 sm:w-2/3 mx-auto mt-10 mb-10">
       <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Cookie Policy</h2>
@@ -126,7 +134,6 @@ function Cookies() {
       <ul className="list-disc ml-6">
         <li>Email: [Insert Contact Email]</li>
         <li>Website: [Insert Website URL]</li>
-        <li>Address: [Insert Registered Business Address]</li>
       </ul>
     </div>
   )
