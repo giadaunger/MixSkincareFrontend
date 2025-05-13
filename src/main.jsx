@@ -15,7 +15,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import Sales from "./pages/Sales";
+import Sales from "./pages/sales/Sales";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Cookies from "./pages/Cookies";
 
