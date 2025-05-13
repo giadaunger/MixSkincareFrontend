@@ -17,7 +17,7 @@ function NaturalRemedies() {
 
       <div className="mt-10 p-4 flex flex-col xl:flex-row xl:space-x-4 space-y-4 items-center">
         <div className="xl:w-1/2">
-          <img src="../../public/blogImg/NaturalRemediesImg1.png" alt="" />
+          <img src="/public/blogImg/NaturalRemediesImg1.png" alt="" />
         </div>
         <div className="xl:w-1/2">
           <h3 className="text-2xl">1. Turmeric Brightening Face Mask</h3>
@@ -45,7 +45,7 @@ function NaturalRemedies() {
 
       <div className="mt-20 flex flex-col xl:flex-row xl:space-x-4 space-y-4 p-4 items-center">
         <div className="xl:w-1/2">
-          <img src="../../public/blogImg/NaturalRemediesImg2.png" alt="" />
+          <img src="/public/blogImg/NaturalRemediesImg2.png" alt="" />
         </div>
         <div className="xl:w-1/2">
           <h3 className="text-2xl">2. Coffee Undereye Mask for Dark Circles</h3>
@@ -69,7 +69,7 @@ function NaturalRemedies() {
 
       <div className="mt-20 mb-10 flex flex-col xl:flex-row xl:space-x-4 space-y-4 p-4 items-center">
         <div className="xl:w-1/2">
-          <img src="../../public/blogImg/NaturalRemediesImg3.png" alt="" />
+          <img src="/public/blogImg/NaturalRemediesImg3.png" alt="" />
         </div>
         <div className="xl:w-1/2">
           <h3 className="text-2xl">3. Oatmeal & Honey Calming Mask</h3>
