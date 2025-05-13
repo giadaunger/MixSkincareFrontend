@@ -18,6 +18,135 @@ function Sales() {
         </p>
       </div>
       <div className="w-3/4 mx-auto flex flex-col gap-y-10 mt-10">
+
+      <Link to={"https://lyko.com/sv/gigantic-sale"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/lykoLogo.jpeg" 
+                alt="lyko logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">Up to 50% off sitewide</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.cocopanda.se/products/harvard?skip=0&filterValues%5B0%5D.key=0-7&filterValues%5B0%5D.value=2"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/cocopandaLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">Up to 40% on haircare</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.cocopanda.se/products/hudvard?skip=0&filterValues%5B0%5D.key=0-7&filterValues%5B0%5D.value=2"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/cocopandaLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">Up to 40% on skincare</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.kicks.se/ardell"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/kicksLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">30% on Ardell</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.kicks.se/beautyact"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/kicksLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">25% on BeautyAct</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.kicks.se/lumene/makeup/bas"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/kicksLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">25% on Lumene base-makeup</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.kicks.se/depend"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/kicksLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">25% on Depend</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
+        <Link to={"https://www.kicks.se/makeup/ogonmakeup"} target="_blank" rel="noopener noreferrer">
+          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
+            <div className="items-center flex flex-col sm:flex-row">
+              <img 
+                src="/logos/cocopandaLogo.png" 
+                alt="kicks logo" 
+                className="rounded-md h-24 w-24 sm:mr-4"
+              />
+              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">Up to 20% on Biotherm</p>
+            </div>
+            <div className="flex justify-end p-2">
+              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
+            </div>
+          </div>
+        </Link>
+
         <Link to={"https://www.kicks.se/makeup/ogonmakeup"} target="_blank" rel="noopener noreferrer">
           <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
             <div className="items-center flex flex-col sm:flex-row">
@@ -34,37 +163,6 @@ function Sales() {
           </div>
         </Link>
 
-        <Link to={"https://www.kicks.se/makeup/lappar"} target="_blank" rel="noopener noreferrer">
-          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
-            <div className="items-center flex flex-col sm:flex-row">
-              <img 
-                src="/logos/kicksLogo.png" 
-                alt="kicks logo" 
-                className="rounded-md h-24 w-24 sm:mr-4"
-              />
-              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">25% on lip makeup</p>
-            </div>
-            <div className="flex justify-end p-2">
-              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
-            </div>
-          </div>
-        </Link>
-
-        <Link to={"https://lyko.com/sv/gigantic-sale"} target="_blank" rel="noopener noreferrer">
-          <div className="border-2 border-[#e2a3b7] p-4 items-center rounded-md shadow-md flex flex-col sm:flex-row justify-between transform transition duration-300 hover:scale-105">
-            <div className="items-center flex flex-col sm:flex-row">
-              <img 
-                src="/logos/lykoLogo.jpeg" 
-                alt="lyko logo" 
-                className="rounded-md h-24 w-24 sm:mr-4"
-              />
-              <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">Up to 50% off sitewide</p>
-            </div>
-            <div className="flex justify-end p-2">
-              <ArrowRight className="w-14 h-14 text-[#e2a3b7]"/>
-            </div>
-          </div>
-        </Link>
       </div>
     </div>
   )
