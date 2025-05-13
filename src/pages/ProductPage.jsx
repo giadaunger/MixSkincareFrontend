@@ -6,11 +6,16 @@ import Loader from '../components/Loader'
 
 function ProductPage() {
   const { id } = useParams();
-  const { productInfo, fetchProductInfo } = skincareStore();
+  const { productInfo, setProductInfo, fetchProductInfo, isLoading, setIsLoading } = skincareStore();
   const [activeTab, setActiveTab] = useState('description');
 
   useEffect(() => {
-    fetchProductInfo(id);
+    setProductInfo(null);
+    setIsLoading(true);
+    
+    fetchProductInfo(id).then(() => {
+      setIsLoading(false);
+    });
 
     window.scrollTo({
       top: 0,
@@ -18,7 +23,7 @@ function ProductPage() {
     });
   }, [id]);
 
-  if (!productInfo) return <div><Loader /></div>;
+  if (isLoading || !productInfo) return <div><Loader /></div>;
 
   return (
     <div className="">
@@ -57,7 +62,7 @@ function ProductPage() {
                 INGREDIENSER
               </button>
 
-              <button
+              {/* <button
                 onClick={() => setActiveTab('SkinType')}
                 className={`p-2 sm:p-4 text-sm sm:text-lg font-medium rounded-t-md ${
                   activeTab === 'SkinType'
@@ -66,7 +71,7 @@ function ProductPage() {
                 }`}
               >
                 SKIN TYPE
-              </button>
+              </button> */}
             </div>
             <div className="w-11/12 mx-auto">
               {activeTab === 'description' && (
