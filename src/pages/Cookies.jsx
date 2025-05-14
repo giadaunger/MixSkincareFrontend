@@ -132,8 +132,10 @@ function Cookies() {
         the information below:
       </p>
       <ul className="list-disc ml-6">
-        <li>Email: [Insert Contact Email]</li>
-        <li>Website: [Insert Website URL]</li>
+        <li>Email: info@mixskincare.com</li>
+        <li>Website: 
+          <a href="https://mixskincare.beauty/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">mixskincare.beauty</a>
+        </li>
       </ul>
     </div>
   )

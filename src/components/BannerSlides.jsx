@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function BannerSlides() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,10 +24,10 @@ function BannerSlides() {
       slogan: "Glow From Within, Learn Along the Way!",
       text: "Explore skincare tips, ingredient insights, and beauty routines – written to empower your journey to healthy, radiant skin.",
       textColor: "black",
-      backgroundColor: "#a39991d3",
+      backgroundColor: "#b0a59cd3",
       buttonText: "Read the blog",
       styling: "left",
-      link: ""
+      link: "/blog"
     },
   ];
 
@@ -59,9 +60,11 @@ function BannerSlides() {
             >
               <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${slide.textColor ? `text-${slide.textColor}` : 'text-white'}`}>{slide.slogan}</h2>
               <p className={`text-sm md:text-base mb-4 ${slide.textColor ? `text-${slide.textColor}` : 'text-white'}`}>{slide.text}</p>
-              <button className="bg-[#E2A3B7] text-white px-4 py-2 mt-10 rounded-md hover:bg-[#d38ea5] transition-colors flex mx-auto">
-                {slide.buttonText}
-              </button>
+              <Link to={slide.link}>
+                <button className="text-black border border-black px-4 py-2 mt-10 rounded-md flex mx-auto transform transition duration-300 hover:scale-110">
+                  {slide.buttonText}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
