@@ -9,6 +9,10 @@ function AnalyzedResult() {
   const hasActiveIngredients = analysisResult.active_ingredients?.length > 0;
   const hasIncompatibilities = analysisResult.incompatibility_warnings?.length > 0;
   
+  // ML-modellens resultat
+  const mlIsCompatible = analysisResult.is_compatible;
+  const mlConfidence = analysisResult.confidence || 0;
+  
   const renderWarningImage = () => {
     if (hasActiveIngredients && hasIncompatibilities) {
       return (
@@ -34,12 +38,38 @@ function AnalyzedResult() {
     return null;
   };
   
+  // Skapa ML-resultatmeddelande baserat på faktiska värden
+  const getMLResultMessage = () => {
+    if (mlIsCompatible === undefined) return "";
+    
+    if (mlIsCompatible === true) {
+      return `AI predicts these products work well together (${mlConfidence}% confidence).`;
+    } else {
+      return `AI predicts these products might NOT be compatible (${mlConfidence}% confidence).`;
+    }
+  };
+  
   return (
     <>
       {(hasActiveIngredients || hasIncompatibilities) ? (
         <div className="bg-[#FFDFE9] rounded-xl p-6 lg:w-2/3 mx-auto mb-24">
           <div className="md:flex inline">
             <div className="bg-white rounded-xl p-6 md:w-3/4">
+              {mlIsCompatible !== undefined && (
+                <div 
+                  className={`sm:flex w-full items-center gap-3 ${mlIsCompatible ? 'bg-[#d9f9d9] text-[#7dcc7d]' : 'bg-[#ffcccc] text-[#e57373]'} font-bold rounded-xl sm:rounded-full mt-4 px-6 py-3 max-w-2xl mx-auto shadow-xl`}
+                >
+                  {mlIsCompatible ? (
+                    <Ok className="w-8 h-8 flex-shrink-0" />
+                  ) : (
+                    <Warning className="w-8 h-8 flex-shrink-0" />
+                  )}
+                  <span className="text-center">
+                    {getMLResultMessage()}
+                  </span>
+                </div>
+              )}
+              
               {analysisResult.active_ingredients?.map((active, index) => (
                 <div 
                   key={index} 
@@ -74,11 +104,15 @@ function AnalyzedResult() {
       ) : (
         <div className="sm:flex w-full items-center gap-3 bg-[#d9f9d9] text-[#7dcc7d] font-bold rounded-xl sm:rounded-full mb-20 px-6 py-3 max-w-2xl mx-auto shadow-xl">
           <Ok className="w-8 h-8 flex-shrink-0" />
-          <span className="text-center">No active ingredients and no incompatible ingredients!</span>
+          <span className="text-center">
+            {mlIsCompatible !== undefined 
+              ? getMLResultMessage()
+              : "No active ingredients and no incompatible ingredients!"
+            }
+          </span>
         </div>
-      )
-    }
-  </>
+      )}
+    </>
   );
 }
 

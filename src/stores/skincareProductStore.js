@@ -52,6 +52,26 @@ const skincareStore = create((set) => ({
   setAnalysisResult: (result) => set({ analysisResult: result}),
   analyzeCompatibility: async (product1_id, product2_id) => {
     try {
+      set({ isLoading: true });
+      const response = await fetch(`${API_URL}/ml-compatibility/${product1_id}/${product2_id}`, {
+        method: "POST",
+      });
+      if(!response.ok) {
+        throw new Error("Failed to predict compatibility with ML model")
+      }
+      const data = await response.json()
+      console.log("data: ", data);
+      
+      set({ analysisResult: data, isLoading: false })
+      return data;
+    } catch (error) {
+      console.log("Error predicting compatibility: ", error)
+      set({ errorMsg: "Failed to predict compatibility. Please try again.", isLoading: false })
+      return null;
+    }
+  },
+/*   analyzeCompatibility: async (product1_id, product2_id) => {
+    try {
       const respons = await fetch(`${API_URL}/analyze-compatibility/${product1_id}/${product2_id}`, {
         method: "POST",
       });
@@ -65,7 +85,7 @@ const skincareStore = create((set) => ({
       console.log("Error analyzing products: ", error)
       set({ errorMsg: "Failed to analyze products. Please try again." })
     }
-  },
+  }, */
 
   dupesResult: null,
   setDupesResult: (result) => set({ dupesResult: result }),
@@ -118,7 +138,7 @@ const skincareStore = create((set) => ({
     } catch (error) {
       console.log("Error fetching product: ", error)
     }
-  }
+  },
 }));
 
 export default skincareStore;
