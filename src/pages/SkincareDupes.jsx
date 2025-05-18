@@ -24,6 +24,18 @@ function SkincareDupes() {
   const dupesResultRef = useRef(null);
 
   useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupOpen]);
+
+  useEffect(() => {
     if(selectedDupeProduct && !chosenProduct) {
       setChosenProduct(selectedDupeProduct);
     }

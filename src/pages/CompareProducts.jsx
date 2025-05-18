@@ -28,6 +28,18 @@ function CompareProducts() {
   } = skincareStore();
 
   useEffect(() => {
+    if (isPopupOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupOpen]);
+
+  useEffect(() => {
     if(selectedCompareProduct && activeCard === 1) {
       setFirstCompareProduct(selectedCompareProduct);
       setActiveCard(null); 
