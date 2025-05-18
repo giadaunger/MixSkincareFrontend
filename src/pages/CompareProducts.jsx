@@ -86,7 +86,7 @@ function CompareProducts() {
               <p className="text-xl min-[500px]:text-2xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
-          <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+          <div className={`border border-gray-300 rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-sm`}>
             {firstCompareProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
@@ -105,15 +105,15 @@ function CompareProducts() {
                   </div>
                 </div>
               ) : (
-                <button onClick={() => handleCardClick(1)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
+                <button onClick={() => handleCardClick(1)} className="bg-[#E2A3B7] rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-110">
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-white" />
                 </button>
               )}
             </div>
             <div className="flex justify-center items-center">
               <Plus className="w-24 h-24 text-[#E2A3B7]"/>  
             </div>
-            <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>
+            <div className={`border border-gray-300 rounded-xl w-60 min-w-60 min-h-[340px] flex ${secondCompareProduct ? 'items-end' : 'items-center'} justify-center`}>
               {secondCompareProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute -top-8 right-2"> 
@@ -132,8 +132,8 @@ function CompareProducts() {
                   </div>
                 </div>
               ) : (
-                <button onClick={() => handleCardClick(2)} className="bg-white rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-125">
-                  <Plus className="w-12 h-12 flex mx-auto items-center text-[#E2A3B7]" />
+                <button onClick={() => handleCardClick(2)} className="bg-[#E2A3B7] rounded-full mx-auto items-center w-20 h-20 flex shadow-xl transition duration-300 hover:scale-110">
+                  <Plus className="w-12 h-12 flex mx-auto items-center text-white" />
                 </button>
               )}
             </div>
@@ -150,8 +150,8 @@ function CompareProducts() {
             <button 
             onClick={handleAnalyzeCompatibility}
             disabled={!firstCompareProduct || !secondCompareProduct}
-            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 border text-black
-              ${(!firstCompareProduct || !secondCompareProduct || errorMsg) ? 'bg-gray-300 border-gray-300 cursor-not-allowed opacity-50' : 'border-[#FFDFE9] bg-[#FFDFE9] hover:bg-white active:bg-[#E2A3B7] hover:text-[#E2A3B7] hover:border-[#E2A3B7] transform transition duration-300 hover:scale-110'}`}>
+            className={`w-full lg:w-1/6 mt-14 mb-28 rounded-xl shadow-lg text-center text-xl p-2 border
+              ${(!firstCompareProduct || !secondCompareProduct || errorMsg) ? 'bg-gray-300 border-gray-300 cursor-not-allowed opacity-50 text-black' : 'border-[#E2A3B7] text-[#E2A3B7] transform transition duration-300 hover:scale-110'}`}>
                 Analyze compatibility
             </button>
           </div>

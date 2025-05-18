@@ -68,7 +68,7 @@ function SkincareDupes() {
               {chosenProduct ? (
                 <div className="relative w-full h-full p-4"> 
                   <div className="absolute right-4"> 
-                    <div onClick={() => handleDeleteProduct(1)} className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer transition duration-300 hover:scale-110">
+                    <div onClick={() => handleDeleteProduct(1)} className="sw-10 h-10 flex items-center justify-center cursor-pointer transition duration-300 hover:scale-110">
                       <Trash3Fill className="w-6 h-6 text-[#E2A3B7]" />
                     </div>
                   </div>
