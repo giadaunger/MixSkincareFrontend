@@ -60,7 +60,7 @@ function NavFullScreen() {
             )}
           </div>
           {isDropdownOpen && (
-            <div className="absolute -left-24 min-[1110px]:mt-0 z-50 w-56 bg-white shadow-lg rounded-b-lg">
+            <div className="absolute -left-24 min-[1110px]:mt-0 z-20 w-56 bg-white shadow-lg rounded-b-lg">
               <NavLink
                 onClick={closeDropdown}
                 to="/skincare-dupes"

@@ -9,6 +9,7 @@ import { Warning } from "@styled-icons/ionicons-solid/Warning";
 
 function SkincareDupes() {
   const {
+    isPopupOpen,
     setIsPopupOpen, 
     selectedDupeProduct, 
     errorMsg, 
@@ -54,9 +55,14 @@ function SkincareDupes() {
 
   return (
     <div>
-      <div className="z-10 w-11/12 lg:w-3/4 xl:w-1/2 mx-auto flex items-center justify-center absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <AddProducts onSelect={setSelectedDupeProduct} />
-      </div>
+      {isPopupOpen && (
+        <>
+          <div className="fixed inset-0 bg-[#484a4b9e] z-40"></div>          
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <AddProducts onSelect={setSelectedDupeProduct} />
+          </div>
+        </>
+      )}
       <div className="z-0">
         <div className="w-5/6 mx-auto">
           <div className="w-full md:w-2/3 mx-auto text-center mt-12">

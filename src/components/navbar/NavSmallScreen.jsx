@@ -53,7 +53,7 @@ function NavSmallScreen() {
       </div>
       {isOpen && (
         <div className="top-[84px] shadow-md">
-          <div className="bg-white z-50 absolute w-full left-0 right-0 ">
+          <div className="bg-white z-20 absolute w-full left-0 right-0 ">
             <div className="flex flex-col w-11/12 mx-auto mt-4">
               <NavLink 
                 to="/skincare-dupes"

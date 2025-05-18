@@ -70,7 +70,7 @@ function AddProducts({ onSelect }) {
   return (
     <>
       {isPopupOpen && (
-        <div className="p-4 w-full flex flex-col bg-[#FFDFE9] border-8 rounded-xl border-[#E2A3B7] min-h-96 shadow-2xl">
+        <div className="z- p-4 w-11/12 lg:w-3/4 xl:w-1/2 flex flex-col border-4 bg-gray-50 rounded-xl border-[#E2A3B7] min-h-96 shadow-2xl">
           <button className="flex justify-end" onClick={() => setIsPopupOpen(false)}>
             <Close className="w-10 h-10 cursor-pointer" />
           </button>
@@ -83,7 +83,7 @@ function AddProducts({ onSelect }) {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               placeholder='Type to search'
-              className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none border-[#FFD6DC] focus:border-[#FFDFE9]"
+              className="w-full pl-10 pr-4 py-2 rounded-lg border-2 focus:outline-none bg-gray-50 border-[#E2A3B7] focus:border-[#FFDFE9]"
             />
           </div>
 
@@ -94,7 +94,7 @@ function AddProducts({ onSelect }) {
                   <div 
                     key={product.id}
                     onClick={(e) => handleProductSelect(product, e)}
-                    className={`p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b-2 border-b-white w-4/5 mx-auto ${
+                    className={`p-2 hover:bg-[#E2A3B7] cursor-pointer hover:rounded-lg flex flex-row border-b border-b-[#E2A3B7] w-4/5 mx-auto ${
                       index === selectedIndex ? 'bg-[#E2A3B7] rounded-lg' : ''
                     }`}
                   >
