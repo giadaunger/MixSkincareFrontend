@@ -56,12 +56,12 @@ function BannerSlides() {
             />
             <div 
               style={slide.backgroundColor ? { backgroundColor: slide.backgroundColor } : {}} 
-              className={`relative rounded-lg z-10 p-10 max-w-md  ${slide.styling === "left" ? "ml-6 md:ml-16" : "ml-auto mr-6 md:mr-16"}`}
+              className={`relative shadow-xl rounded-lg z-10 p-8 text-center max-w-md  ${slide.styling === "left" ? "ml-6 md:ml-16" : "ml-auto mr-6 md:mr-16"}`}
             >
               <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${slide.textColor ? `text-${slide.textColor}` : 'text-white'}`}>{slide.slogan}</h2>
               <p className={`text-sm md:text-base mb-4 ${slide.textColor ? `text-${slide.textColor}` : 'text-white'}`}>{slide.text}</p>
               <Link to={slide.link}>
-                <button className="text-black border border-black px-4 py-2 mt-10 rounded-md flex mx-auto transform transition duration-300 hover:scale-110">
+                <button className="text-black shadow-md border border-black px-4 py-2 mt-10 rounded-md flex mx-auto transform transition duration-300 hover:scale-110">
                   {slide.buttonText}
                 </button>
               </Link>
