@@ -57,9 +57,9 @@ function Blog() {
   
   return (
     <div className="w-11/12 sm:w-5/6 mx-auto">
-      <h2 className="text-4xl md:text-6xl text-center mb-10 mt-10 text-[#e2a3b7]">Our blogs</h2>  
+      <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">Our blogs</h2>  
       <div className="mb-5 text-center w-3/4 mx-auto">
-        <p className="text-2xl mb-2">
+        <p className="text-2xl mb-4">
           Welcome to the MixSkincare Blog, your space for honest reviews, natural beauty tips, 
           and real skin talk.
         </p>

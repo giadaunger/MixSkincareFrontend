@@ -14,11 +14,9 @@ function Sales() {
   return (
     <div className="w-11/12 sm:w-5/6 mx-auto mt-10 mb-10">
       <div className="text-center w-3/4 mx-auto">
-        <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Sales</h2>
-        <p className="w-3/4 mx-auto">
-          Discover the Best Beauty Deals All in One Place
-        </p>
-        <p>
+        <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">Sales</h2>
+        <p className="w-3/4 mx-auto text-2xl mb-4">Discover the Best Beauty Deals All in One Place!</p>
+        <p className="text-lg">
           Looking for discounts on your favorite skincare and beauty brands? We've gathered the latest 
           sales from trusted retailers so you don’t have to hunt for them. Whether you're restocking your 
           go-to products or trying something new, these deals make glowing up more affordable than ever. 
@@ -40,7 +38,7 @@ function Sales() {
                   <img 
                     src={item.logo} 
                     alt="logo" 
-                    className="rounded-md h-24 w-24 sm:mr-4"
+                    className="rounded-md h-24 w-24 sm:mr-4 shadow-md"
                   />
                   <p className="text-2xl mt-2 text-center sm:text-left text-[#e2a3b7]">{displayText}</p>
                 </div>

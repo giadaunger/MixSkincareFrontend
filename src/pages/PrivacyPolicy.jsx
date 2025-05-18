@@ -11,7 +11,7 @@ function PrivacyPolicy() {
 
   return (
     <div className="w-11/12 sm:w-2/3 mx-auto mt-10 mb-10">
-      <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Privacy Policy</h2>
+      <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">Privacy Policy</h2>
       <p><strong>Last updated:</strong> 2025.</p>
 
       <p>

@@ -82,8 +82,8 @@ function CompareProducts() {
       <div className="z-0">
         <div className="w-5/6 mx-auto">
           <div className="w-full mx-auto text-center mt-12">
-              <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10">Add Products to Compare Ingredients!</h2>
-              <p className="text-xl min-[500px]:text-2xl md:text-3xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
+              <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">Add Products to Compare Ingredients!</h2>
+              <p className="text-xl min-[500px]:text-2xl mb-10 min-[500px]:mb-20">Add your skincare favorites to analyze their compatibility.</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
           <div className={`bg-[#FFDFE9] rounded-xl w-60 min-w-60 min-h-[340px] flex ${firstCompareProduct ? 'items-end' : 'items-center'} justify-center shadow-xl`}>

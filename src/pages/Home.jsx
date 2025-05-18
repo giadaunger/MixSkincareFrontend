@@ -28,7 +28,7 @@ function Home() {
         <BannerSlides />
       </div>
       <div className="w-5/6 mx-auto justify-center mt-20 mb-20">
-        <h2 className="text-4xl md:text-6xl text-center mb-10 text-[#e2a3b7]">Popular products</h2>
+        <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">Popular products</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 gap-y-20">
           {frontPageProducts.map(product => (
             <Link 
@@ -60,7 +60,7 @@ function Home() {
           </button>
         </div>
         <div className="mb-20 mt-36">
-          <h2 className="text-center text-[#E2A3B7] text-3xl sm:text-5xl mb-10">
+          <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">
             Why is product compatibility important?
           </h2>
           <p className="text-center text-xl mb-20">
@@ -73,7 +73,7 @@ function Home() {
             skincare items, you can avoid adverse reactions and achieve the best
             possible results for your skin’s health and appearance.
           </p>
-          <h2 className="text-center text-[#E2A3B7] text-3xl sm:text-5xl mb-10">
+          <h2 className="text-4xl min-[500px]:text-5xl md:text-6xl mb-4 min-[500px]:mb-10 text-[#E2A3B7] text-center mt-10">
             Seek Professional Guidance
           </h2>
           <p className="text-center text-xl mb-32">
