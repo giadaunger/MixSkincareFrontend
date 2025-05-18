@@ -30,7 +30,7 @@ function NavSmallScreen() {
             className="min-[1110px]:h-28 min-[1110px]:w-28 h-20 w-20"
           />
         </NavLink>
-        <button onClick={() => setIsOpen(!isOpen)} className="">
+        <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <X  className="w-10 h-10 text-[#E2A3B7]"/>
           ) : (
