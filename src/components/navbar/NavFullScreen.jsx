@@ -10,6 +10,10 @@ function NavFullScreen() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   return (
     <div className="flex flex-row justify-between items-center">
       <div>
@@ -23,21 +27,21 @@ function NavFullScreen() {
       </div>
       <div className="flex flex-row gap-5">
         <NavLink 
-          onClick={toggleDropdown}
+          onClick={closeDropdown}
           to="/blog"
           className="px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
         >
           Blog
         </NavLink>
         <NavLink 
-          onClick={toggleDropdown}
+          onClick={closeDropdown}
           to="/about"
           className="px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
         >
           About
         </NavLink>
         <NavLink 
-          onClick={toggleDropdown}
+          onClick={closeDropdown}
           to="/sales"
           className="px-4 py-2 text-center text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
         >
@@ -58,7 +62,7 @@ function NavFullScreen() {
           {isDropdownOpen && (
             <div className="absolute -left-24 min-[1110px]:mt-0 z-50 w-56 bg-white shadow-lg rounded-b-lg">
               <NavLink
-                onClick={toggleDropdown}
+                onClick={closeDropdown}
                 to="/skincare-dupes"
                 className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7] whitespace-nowrap"
               >
@@ -71,14 +75,14 @@ function NavFullScreen() {
                 Haircare Dupes
               </NavLink> */}
               <NavLink
-                onClick={toggleDropdown}
+                onClick={closeDropdown}
                 to="/compare"
                 className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
               >
                 Compare Products
               </NavLink>
               <NavLink
-                onClick={toggleDropdown}
+                onClick={closeDropdown}
                 to="/products"
                 className="block px-4 py-2 text-2xl transform transition duration-300 hover:scale-110 hover:text-[#E2A3B7]"
               >
